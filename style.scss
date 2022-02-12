@@ -3,17 +3,21 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden; }
-
+  overflow: hidden;
+}
 .social-media {
   display: flex;
   align-items: center;
-  justify-content: space-around; }
-  .social-media a {
+  justify-content: space-around;
+  a {
     margin: 5px;
     text-decoration: none;
     color: black;
-    transition: color 0.5s, font-size 0.5s; }
-    .social-media a:hover {
+    transition: color 0.5s, font-size 0.5s;
+
+    &:hover {
       font-size: xx-large;
-      color: steelblue; }
+      color: steelblue;
+    }
+  }
+}
