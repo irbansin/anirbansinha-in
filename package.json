@@ -1,0 +1,23 @@
+{
+  "name": "anirbansinha-in",
+  "version": "1.0.0",
+  "description": "A Portfolio website ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irbansin/anirbansinha-in.git"
+  },
+  "keywords": [
+    "personal",
+    "website"
+  ],
+  "author": "Anirban Sinha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irbansin/anirbansinha-in/issues"
+  },
+  "homepage": "https://github.com/irbansin/anirbansinha-in#readme"
+}
