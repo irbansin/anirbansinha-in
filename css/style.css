@@ -7,13 +7,9 @@ body {
 
 .social-media {
   display: flex;
-  align-items: center;
   justify-content: space-around; }
   .social-media a {
     margin: 5px;
     text-decoration: none;
     color: black;
-    transition: color 0.5s, font-size 0.5s; }
-    .social-media a:hover {
-      font-size: xx-large;
-      color: steelblue; }
+    font-size: xx-large; }
