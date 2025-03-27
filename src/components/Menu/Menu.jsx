@@ -1,12 +1,15 @@
 import styles from "./Menu.module.scss";
 
-function Menu() {
+function Menu({ menuItems, handleClick }) {
   return (
     <div className={styles.menu}>
-      <div className={styles.menuItem}>Home</div>
-      <div className={styles.menuItem}>About Me</div>
-      <div className={styles.menuItem}>Projects</div>
-      <div className={styles.menuItem}>Blog</div>
+      {menuItems.map((item, i) => {
+        return (
+          <div key={i} className={styles.menuItem}>
+            {item}
+          </div>
+        );
+      })}
     </div>
   );
 }
