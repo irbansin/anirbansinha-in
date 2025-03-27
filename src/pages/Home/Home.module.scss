@@ -11,4 +11,10 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    //write code to grow the icons
+    transform: scale(1.1); /* Scale up to 110% on hover */
+  }
 }
