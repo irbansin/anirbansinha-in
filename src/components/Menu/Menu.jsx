@@ -12,7 +12,9 @@ function Menu({ menuItems, handleClick }) {
             className={styles.menuItem}
             onClick={() => handleClick(item)}
           >
-            {item}
+            <div>
+              <strong>{item}</strong>
+            </div>
           </NavLink>
         );
       })}

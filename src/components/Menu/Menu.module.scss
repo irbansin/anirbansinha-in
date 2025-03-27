@@ -1,13 +1,23 @@
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-color: dimgrey;
   position: absolute;
   height: 3rem;
 
   .menuItem {
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    background-color: dimgrey;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: black;
+    }
   }
 }
