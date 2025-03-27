@@ -5,9 +5,13 @@ function Header() {
 
   return (
     <>
-      <Menu menuItems={pages} />
+      <Menu menuItems={pages} handleClick={routeToPage} />
     </>
   );
+}
+
+function routeToPage(page) {
+  console.log(page);
 }
 
 export default Header;

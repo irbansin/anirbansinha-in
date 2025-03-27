@@ -5,7 +5,11 @@ function Menu({ menuItems, handleClick }) {
     <div className={styles.menu}>
       {menuItems.map((item, i) => {
         return (
-          <div key={i} className={styles.menuItem}>
+          <div
+            key={i}
+            className={styles.menuItem}
+            onClick={() => handleClick(item)}
+          >
             {item}
           </div>
         );
