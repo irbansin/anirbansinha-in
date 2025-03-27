@@ -1,6 +1,6 @@
-import styles from "./AboutMe.module.scss";
+import styles from "./About.module.scss";
 
-function AboutMe() {
+function About() {
   return (
     <div>
       <h1>About Me</h1>
@@ -11,4 +11,4 @@ function AboutMe() {
     </div>
   );
 }
-export default AboutMe;
+export default About;

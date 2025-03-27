@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styles from "./Menu.module.scss";
 
 function Menu({ menuItems, handleClick }) {
@@ -5,13 +6,14 @@ function Menu({ menuItems, handleClick }) {
     <div className={styles.menu}>
       {menuItems.map((item, i) => {
         return (
-          <div
+          <NavLink
+            to={item}
             key={i}
             className={styles.menuItem}
             onClick={() => handleClick(item)}
           >
             {item}
-          </div>
+          </NavLink>
         );
       })}
     </div>

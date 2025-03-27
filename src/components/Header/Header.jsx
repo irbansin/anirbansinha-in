@@ -1,7 +1,7 @@
 import "./Header.scss";
 import Menu from "../Menu/Menu";
 function Header() {
-  const pages = ["Home", "About Me", "Projects", "Blog"];
+  const pages = ["Home", "About", "Projects", "Blog"];
 
   return (
     <>
