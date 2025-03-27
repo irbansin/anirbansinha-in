@@ -3,7 +3,6 @@ import './Content.scss'
 export default function Content() {
   return (
     <>
-      <body>
         <div className="contact-info">
           <h1 href="mailto:reach@anirbansinha.in">
             <span>reach@</span>
@@ -58,7 +57,6 @@ export default function Content() {
             </a>
           </h2>
         </div>
-      </body>
     </>
   );
 }
