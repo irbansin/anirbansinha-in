@@ -1,15 +1,15 @@
-import "./Home.scss";
+import styles from "./Home.module.scss";
 
 function Home() {
   return (
     <>
-      <div className="contact-info">
+      <div className={styles.contactInfo}>
         <h1 href="mailto:reach@anirbansinha.in">
           <span>reach@</span>
           <span>anirbansinha.in</span>
         </h1>
 
-        <h2 className="social-media">
+        <h2 className={styles.socialMedia}>
           <a
             href="https://anirbansinha.notion.site/a0bcc45fa11c47fb99ab7d24dadecd49?v=5519d501ffd74921b9903e65dad4691b&pvs=4"
             target="_blank"
