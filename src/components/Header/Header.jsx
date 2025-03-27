@@ -1,14 +1,11 @@
-import './Header.scss'
+import "./Header.scss";
+import Menu from "../Menu/Menu";
 function Header() {
-
   return (
-    <div className='menu'>
-        <div className='menu-item'>Home</div>
-        <div className='menu-item'>About Me</div>
-        <div className='menu-item'>Projects</div>
-        <div className='menu-item'>Blog</div>
-    </div>
-  )
+    <>
+      <Menu></Menu>
+    </>
+  );
 }
 
-export default Header
+export default Header;

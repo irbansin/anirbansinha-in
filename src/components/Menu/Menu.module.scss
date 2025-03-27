@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: dimgrey;
+  position: absolute;
+  height: 3rem;
+
+  .menuItem {
+    margin: auto;
+  }
+}
