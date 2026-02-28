@@ -1,24 +1,38 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Menu.module.scss";
 
-function Menu({ menuItems, handleClick }) {
+// items: array of { label, to, external? }
+function Menu({ items, handleClick }) {
   return (
-    <div className={styles.menu}>
-      {menuItems.map((item, i) => {
+    <nav className={styles.menu}>
+      {items.map((item, i) => {
+        if (item.external) {
+          return (
+            <a
+              href={item.to}
+              key={i}
+              className={styles.menuItem}
+              onClick={() => handleClick(item)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>{item.label}</strong>
+            </a>
+          );
+        }
+
         return (
           <NavLink
-            to={item}
+            to={item.to}
             key={i}
             className={styles.menuItem}
             onClick={() => handleClick(item)}
           >
-            <div>
-              <strong>{item}</strong>
-            </div>
+            <strong>{item.label}</strong>
           </NavLink>
         );
       })}
-    </div>
+    </nav>
   );
 }
 export default Menu;

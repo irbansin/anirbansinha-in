@@ -1,63 +1,99 @@
+import { useEffect, useRef } from "react";
 import styles from "./Home.module.scss";
 
-function Home() {
-  return (
-    <>
-      <div className={styles.contactInfo}>
-        <h1 href="mailto:reach@anirbansinha.in">
-          <span>reach@</span>
-          <span>anirbansinha.in</span>
-        </h1>
+const tutorials = [
+  {
+    title: "HTML / CSS / JS",
+    link: "https://www.topmate.io/irbansin/page/5mj05vdJKP",
+    img: "https://www.freepnglogos.com/uploads/javascript-png/fix-html-css-javascript-for-website-logo-6.png",
+  },
+  {
+    title: "NodeJS",
+    link: "https://www.topmate.io/irbansin/page/x4odgj3oII",
+    img: "https://colorlib.com/wp/wp-content/uploads/sites/2/nodejs-frameworks.png",
+  },
+  {
+    title: "ReactJS",
+    link: "https://www.topmate.io/irbansin/page/t64YSDz5rj",
+    img: "https://uploads.teachablecdn.com/attachments/SWtZL7dtR3SYRScauf7w_+1920x1357.jpg",
+  },
+  {
+    title: "Angular",
+    link: "https://www.topmate.io/irbansin/page/MctVtvBb34",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKUxiY3CHfyGGgwhLRkBdKoEmb4lxIOgarRQ&s",
+  },
+];
 
-        <h2 className={styles.socialMedia}>
-          <a
-            href="https://anirbansinha.notion.site/a0bcc45fa11c47fb99ab7d24dadecd49?v=5519d501ffd74921b9903e65dad4691b&pvs=4"
-            target="_blank"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"
-              alt="Anirban Sinha's Notion"
-              width="30px"
-            />
+function Home() {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const opts = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, opts);
+
+    const elems = containerRef.current.querySelectorAll(`.${styles.reveal}`);
+    elems.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className={styles.container} ref={containerRef}>
+      <section className={`${styles.banner} ${styles.reveal}`}>
+        <h1 className={styles.title}>Anirban Sinha</h1>
+        <p className={styles.subtitle}>
+          Developer, teacher, writer. Learn with me through fun tutorials.
+        </p>
+      </section>
+
+      <section className={`${styles.socialLinks} ${styles.reveal}`}>
+        <div className={styles.socialInner}>
+          <a href="https://www.linkedin.com/in/irbansin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="LinkedIn" />
           </a>
-          <a href="https://github.com/irbansin" target="_blank">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/270/270798.png"
-              alt="Anirban Sinha's GitHub"
-              width="30px"
-            />
+          <a href="https://x.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="X" />
           </a>
-          <a href="https://twitter.com/irbansin" target="_blank">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png"
-              alt="Anirban Sinha's Twitter"
-              width="30px"
-            />
+          <a href="https://github.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733553.png" alt="GitHub" />
           </a>
-          <a href="https://instagram.com/irbansin" target="_blank">
-            <img
-              src="https://png.pngtree.com/png-clipart/20180524/ourmid/pngtree-instagram-social-media-icon-png-image_3572472.png"
-              alt="Anirban Sinha's Instagram"
-              width="30px"
-            />
+          <a href="https://instagram.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" />
           </a>
-          <a href="https://irbansin.medium.com/" target="_blank">
-            <img
-              src="https://img.icons8.com/ios_filled/512/FFFFFF/medium-logo.png"
-              alt="Anirban Sinha's Medium"
-              width="30px"
-            />
+          <a href="https://medium.com/@irbansin" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968906.png" alt="Medium" />
           </a>
-          <a href="https://linkedin.com/in/irbansin" target="_blank">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/2504/2504923.png"
-              alt="Anirban Sinha's LinkedIn"
-              width="30px"
-            />
+          <a href="https://topmate.io/dashboard/profile" target="_blank" rel="noopener noreferrer" aria-label="Topmate">
+            <img src="https://images.yourstory.com/cs/images/companies/topmateiologo-1707412608028.jpg" alt="Topmate" />
           </a>
-        </h2>
-      </div>
-    </>
+        </div>
+      </section>
+
+      <section className={`${styles.liveTutorials} ${styles.reveal}`}>
+        <h2 className={styles.sectionTitle}>Live Tutorials</h2>
+        <div className={styles.tutorials}>
+          {tutorials.map((tut, i) => (
+            <a
+              href={tut.link}
+              key={i}
+              className={styles.card}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={tut.img} alt={tut.title} />
+              <div className={styles.cardTitle}>{tut.title}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
 export default Home;

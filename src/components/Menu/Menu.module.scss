@@ -1,23 +1,22 @@
 .menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  position: absolute;
-  height: 3rem;
+  gap: 2rem;
+}
 
-  .menuItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    background-color: dimgrey;
-    width: 100%;
-    height: 100%;
-    transition: background-color 0.3s;
-    &:hover {
-      background-color: black;
-    }
-  }
+.menuItem {
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  background-color: dimgrey;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+.menuItem:hover {
+  background-color: black;
+  transform: scale(1.05);
 }
