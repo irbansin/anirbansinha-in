@@ -94,42 +94,102 @@ function Home() {
           ))}
         </div>
       </section>
-            <section className={`${styles.liveTutorials} ${styles.reveal}`}>
+      <section className={`${styles.liveTutorials} ${styles.reveal}`}>
         <h2 className={styles.sectionTitle}>Schedule</h2>
         <div className={styles.schedule}>
-          <iframe 
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&mode=WEEK&src=YW5pLmV4cG8xMEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTA1NDU4NjgxNjM3MjQ1ODQ0NjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAxNDQ0Mjg2OTQ3MTQyNzI5MDM2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA4MDAyOTgxMTc0NTczNTM0MTI0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE1NTcyMzMxNjg4NDYxODM5MDkwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=N2Y4ZjJmYmZiYzA1N2Y5M2QyMGQ4ZTcwYTViZGNlMWEwZWY0NTE1ZjQzNzliNDEwMWJiMTQ5MDk1ZDU2MDgxOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YTA5ZmFmYzM2N2JmNjY3ZGZkMmQ2ZWI0NDgyMTRkMDBjMDY5N2VkNmI2YWU2ZDAxZTAyODY0MDIyNzk5ODU2MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cDFhdTFxMWJodDI1aWxkYm5qdDdidXQwbW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23711a76&color=%23795548&color=%23b39ddb&color=%237cb342&color=%23e67c73&color=%23f09300&color=%23c0ca33&color=%23b39ddb" 
-            width="800" 
-            height="600" 
-            frameborder="0" 
-            scrolling="no"/>
+          <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&showPrint=0&title=Anirban's%20Calendar&mode=WEEK&src=YW5pLmV4cG8xMEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTA1NDU4NjgxNjM3MjQ1ODQ0NjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAxNDQ0Mjg2OTQ3MTQyNzI5MDM2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA4MDAyOTgxMTc0NTczNTM0MTI0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE1NTcyMzMxNjg4NDYxODM5MDkwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=N2Y4ZjJmYmZiYzA1N2Y5M2QyMGQ4ZTcwYTViZGNlMWEwZWY0NTE1ZjQzNzliNDEwMWJiMTQ5MDk1ZDU2MDgxOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cDFhdTFxMWJodDI1aWxkYm5qdDdidXQwbW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dGNxMm9oZzNmY3VoZDFwdnJlZGw3NW0xOHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23711a76&color=%23795548&color=%23b39ddb&color=%237cb342&color=%23e67c73&color=%23f09300&color=%23b39ddb&color=%238e24aa"
+            width="800"
+            height="600"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
         </div>
       </section>
       <section className={`${styles.socialLinks} ${styles.reveal}`}>
         <div className={styles.socialInner}>
-          <a href="https://www.linkedin.com/in/irbansin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="LinkedIn" />
+          <a
+            href="https://www.linkedin.com/in/irbansin/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/145/145807.png"
+              alt="LinkedIn"
+            />
           </a>
-          <a href="https://x.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="X">
-            <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="X" />
+          <a
+            href="https://x.com/irbansin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/733/733579.png"
+              alt="X"
+            />
           </a>
-          <a href="https://github.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <img src="https://cdn-icons-png.flaticon.com/128/733/733553.png" alt="GitHub" />
+          <a
+            href="https://github.com/irbansin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/733/733553.png"
+              alt="GitHub"
+            />
           </a>
-          <a href="https://instagram.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" />
+          <a
+            href="https://instagram.com/irbansin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/174/174855.png"
+              alt="Instagram"
+            />
           </a>
-          <a href="https://medium.com/@irbansin" target="_blank" rel="noopener noreferrer" aria-label="Medium">
-            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968906.png" alt="Medium" />
+          <a
+            href="https://medium.com/@irbansin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Medium"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/5968/5968906.png"
+              alt="Medium"
+            />
           </a>
-          <a href="https://dev.to/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Dev">
-            <img src="https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="Dev.to" />
+          <a
+            href="https://dev.to/irbansin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Dev"
+          >
+            <img
+              src="https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+              alt="Dev.to"
+            />
           </a>
           <a href="mailto:reach@anirbansinha.in" aria-label="Email">
-            <img src="https://cdn-icons-png.flaticon.com/128/561/561127.png" alt="Email" />
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/561/561127.png"
+              alt="Email"
+            />
           </a>
-          <a href="https://topmate.io/dashboard/profile" target="_blank" rel="noopener noreferrer" aria-label="Topmate">
-            <img src="https://images.yourstory.com/cs/images/companies/topmateiologo-1707412608028.jpg" alt="Topmate" />
+          <a
+            href="https://topmate.io/dashboard/profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Topmate"
+          >
+            <img
+              src="https://images.yourstory.com/cs/images/companies/topmateiologo-1707412608028.jpg"
+              alt="Topmate"
+            />
           </a>
         </div>
       </section>
@@ -151,10 +211,6 @@ function Home() {
           ))}
         </div>
       </section>
-
-
-
-
     </div>
   );
 }
