@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anirban Sinha | Javascript &amp; Angular Mastery</title>
+  <!-- MANDATORY GOOGLE FONTS -->
+
+  <!-- ICONS -->
+  <link rel="stylesheet" type="text/css" href="./angular.css">
+
+
+
+</head>
+
+<body>
+
+  <!-- 1. NAV -->
+  <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <div
+        class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl chunky-shadow">
+        AS</div>
+      <span class="font-display font-bold text-xl tracking-tight text-secondary">Anirban Sinha</span>
+    </div>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex gap-4">
+      <a href="https://topmate.io/irbansin/page/MctVtvBb34#about"
+        class="px-4 py-2 rounded-full bg-primary/20 text-secondary font-semibold hover:rotate-2 transition-transform">About</a>
+      <a href="https://topmate.io/irbansin/page/MctVtvBb34#curriculum"
+        class="px-4 py-2 rounded-full bg-fun-teal/20 text-secondary font-semibold hover:-rotate-2 transition-transform">Curriculum</a>
+      <a href="https://topmate.io/irbansin/page/MctVtvBb34#pricing"
+        class="px-4 py-2 rounded-full bg-accent text-white font-semibold hover:scale-105 transition-transform btn-chunky">Join
+        Course</a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-secondary text-3xl">
+      <i :class="mobileMenuOpen ? &#39;ph-bold ph-x&#39; : &#39;ph-bold ph-list&#39;" class="ph-bold ph-list"></i>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+      class="absolute top-full left-0 w-full bg-white p-6 shadow-xl flex flex-col gap-4 md:hidden"
+      style="display: none;">
+      <a @click="mobileMenuOpen = false" href="https://topmate.io/irbansin/page/MctVtvBb34#about"
+        class="text-lg font-bold text-secondary border-b pb-2">About</a>
+      <a @click="mobileMenuOpen = false" href="https://topmate.io/irbansin/page/MctVtvBb34#curriculum"
+        class="text-lg font-bold text-secondary border-b pb-2">Curriculum</a>
+      <a @click="mobileMenuOpen = false" href="https://topmate.io/irbansin/page/MctVtvBb34#pricing"
+        class="text-lg font-bold text-accent">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- 2. HERO -->
+  <section id="hero" class="py-24 px-6 text-center text-white relative overflow-hidden"
+    style="background: linear-gradient(135deg, #16192b, #252d4d, #51616b, #16192b); background-size: 300% 300%; animation: rainbowBg 10s ease infinite">
+
+    <!-- Decorative Floating Shapes -->
+    <div class="absolute top-10 left-10 text-primary/20 text-6xl" style="animation: float 4s ease-in-out infinite"><i
+        class="ph-fill ph-asterisk"></i></div>
+    <div class="absolute bottom-10 right-10 text-fun-teal/20 text-6xl" style="animation: float 6s ease-in-out infinite">
+      <i class="ph-fill ph-circle"></i>
+    </div>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="inline-block relative mb-8">
+        <img src="../../assets/images/irbansin.png" alt="Anirban Sinha"
+          class="rounded-full border-4 border-white shadow-2xl w-40 h-40 object-cover mx-auto hover:animate-wiggle transition-all">
+        <div class="absolute -bottom-2 -right-2 bg-fun-teal text-white p-2 rounded-xl chunky-shadow rotate-12">
+          <i class="ph-bold ph-code text-2xl"></i>
+        </div>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Master <span
+          class="text-primary italic">Angular</span> &amp; <span class="text-fun-teal">Javascript</span></h1>
+      <p class="text-xl md:text-2xl mb-10 text-primary/90 font-medium">Build enterprise-grade applications with 10 years
+        of industry wisdom.</p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://topmate.io/irbansin/page/MctVtvBb34#pricing"
+          class="text-secondary bg-primary font-display font-bold px-10 py-4 rounded-full hover:scale-110 hover:rotate-1 transition-all duration-300 btn-chunky text-xl">
+          Enroll Now
+        </a>
+        <a href="https://topmate.io/irbansin/page/MctVtvBb34#curriculum"
+          class="bg-transparent border-2 border-white/30 backdrop-blur-sm font-display font-bold px-10 py-4 rounded-full hover:bg-white/10 transition-all duration-300 text-xl">
+          View Syllabus
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ABOUT -->
+  <section id="about" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="pop-in" style="animation-delay: 0.2s">
+        <div class="bg-primary/10 p-8 rounded-3xl rotate-[-2deg] chunky-shadow">
+          <h2 class="text-3xl font-bold text-secondary mb-4">The Expert Behind the Code</h2>
+          <p class="text-lg text-text-muted leading-relaxed mb-6">
+            Hi, I'm <span class="font-bold text-accent">Anirban Sinha</span>. With over a decade of experience across
+            React, Angular, and NodeJS, I don't just teach syntax. I teach <strong>Architecture</strong>.
+          </p>
+          <div class="flex gap-4">
+            <a href="https://www.linkedin.com/in/irbansin/" target="_blank"
+              class="w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"><i
+                class="ph-bold ph-linkedin-logo text-xl"></i></a>
+            <a href="https://github.com/irbansin" target="_blank"
+              class="w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"><i
+                class="ph-bold ph-github-logo text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h3 class="text-4xl font-bold text-secondary">Why this course?</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <div class="mt-1 bg-fun-teal rounded-full p-1 text-white"><i class="ph-bold ph-check"></i></div>
+            <p class="text-lg"><strong>Enterprise-Grade Focus:</strong> Learn how large-scale production systems are
+              actually built.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="mt-1 bg-fun-teal rounded-full p-1 text-white"><i class="ph-bold ph-check"></i></div>
+            <p class="text-lg"><strong>Architecture First:</strong> Understand internal mechanics, not just component
+              basics.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="mt-1 bg-fun-teal rounded-full p-1 text-white"><i class="ph-bold ph-check"></i></div>
+            <p class="text-lg"><strong>Hands-on Training:</strong> 20 hours of focused, practical learning.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SERVICES / CURRICULUM -->
+  <section id="curriculum" class="py-20 px-6 bg-[#f0f4f7]">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-secondary mb-4">What You'll Master</h2>
+        <div class="h-2 w-24 bg-accent mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Module 1 -->
+        <div
+          class="bg-white rounded-2xl p-6 chunky-shadow hover:-translate-y-2 transition-all border-t-4 border-primary pop-in"
+          style="animation-delay: 0.1s">
+          <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-accent mb-4">
+            <i class="ph-bold ph-cube text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Core Foundations</h3>
+          <ul class="text-sm text-text-muted space-y-2">
+            <li>• Architecture Overview</li>
+            <li>• Components &amp; Templates</li>
+            <li>• Dependency Injection</li>
+            <li>• Standalone Components</li>
+          </ul>
+        </div>
+
+        <!-- Module 2 -->
+        <div
+          class="bg-white rounded-2xl p-6 chunky-shadow hover:-translate-y-2 transition-all border-t-4 border-fun-teal pop-in rotate-1"
+          style="animation-delay: 0.2s">
+          <div class="w-12 h-12 bg-fun-teal/20 rounded-xl flex items-center justify-center text-fun-teal mb-4">
+            <i class="ph-bold ph-file-ts text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">TypeScript Mastery</h3>
+          <ul class="text-sm text-text-muted space-y-2">
+            <li>• Strong Typing Strategies</li>
+            <li>• Generics &amp; Interfaces</li>
+            <li>• Utility Types</li>
+            <li>• Strict Mode Best Practices</li>
+          </ul>
+        </div>
+
+        <!-- Module 3 -->
+        <div
+          class="bg-white rounded-2xl p-6 chunky-shadow hover:-translate-y-2 transition-all border-t-4 border-accent pop-in rotate-[-1deg]"
+          style="animation-delay: 0.3s">
+          <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center text-accent mb-4">
+            <i class="ph-bold ph-list-checks text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Reactive Forms</h3>
+          <ul class="text-sm text-text-muted space-y-2">
+            <li>• Template vs Reactive</li>
+            <li>• FormBuilder Patterns</li>
+            <li>• Custom Validators</li>
+            <li>• Dynamic Forms</li>
+          </ul>
+        </div>
+
+        <!-- Module 4 -->
+        <div
+          class="bg-white rounded-2xl p-6 chunky-shadow hover:-translate-y-2 transition-all border-t-4 border-secondary pop-in"
+          style="animation-delay: 0.4s">
+          <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary mb-4">
+            <i class="ph-bold ph-lightning text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">RxJS Power</h3>
+          <ul class="text-sm text-text-muted space-y-2">
+            <li>• Observables &amp; Subjects</li>
+            <li>• Core Operators</li>
+            <li>• State Patterns</li>
+            <li>• Memory Leak Prevention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PRICING / FINAL CTA -->
+  <section id="pricing" class="py-24 px-6 bg-secondary text-white relative">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-6xl font-bold mb-8">Ready to Level Up?</h2>
+
+      <!-- STATIC SERVICE CARD -->
+      <div
+        class="bg-white text-secondary rounded-3xl p-8 md:p-12 chunky-shadow relative overflow-hidden max-w-2xl mx-auto">
+        <div class="absolute top-0 right-0 bg-accent text-white px-6 py-2 rounded-bl-3xl font-bold">LIMITED SLOTS</div>
+
+        <h3 class="text-3xl font-bold mb-2">Javascript and Angular in 20 hours</h3>
+        <p class="text-text-muted mb-8 italic">"Angular from basics to enterprise apps - Hands on training"</p>
+
+        <div class="flex flex-col items-center gap-4 mb-10">
+          <span class="text-5xl font-bold text-accent">₹15,000</span>
+          <span class="text-sm text-text-muted uppercase tracking-widest">Full Course Access</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 text-left mb-10">
+          <div class="flex items-center gap-2"><i class="ph-bold ph-video-camera text-fun-teal"></i> 20 Hours Live</div>
+          <div class="flex items-center gap-2"><i class="ph-bold ph-certificate text-fun-teal"></i> Certification</div>
+          <div class="flex items-center gap-2"><i class="ph-bold ph-users text-fun-teal"></i> Q&amp;A Sessions</div>
+          <div class="flex items-center gap-2"><i class="ph-bold ph-code-block text-fun-teal"></i> Project Based</div>
+        </div>
+
+        <a href="https://topmate.io/irbansin/1982545" target="_blank"
+          class="block w-full bg-accent text-white font-display font-bold py-5 rounded-2xl text-2xl hover:scale-105 transition-all btn-chunky hover:animate-wiggle">
+          Secure My Spot
+        </a>
+        <p class="mt-4 text-xs text-text-muted">Safe &amp; Secure Payment via Topmate</p>
+      </div>
+    </div>
+  </section>
+  <!-- 6. Schedule -->
+  <section id="schedule" class="py-24 px-6 bg-secondary text-white relative">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-6xl font-bold mb-8">Schedule</h2>
+      <p class="text-xl md:text-2xl mb-10 text-primary/90 font-medium">Get to know our vibes</p>
+      <iframe
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&mode=AGENDA&src=Y2xhc3Nyb29tMTA1NDU4NjgxNjM3MjQ1ODQ0NjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23795548"
+        style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="p-6 rounded-2xl border-2 border-primary/20 hover:border-primary transition-colors cursor-pointer">
+          <h4 class="font-bold text-lg flex justify-between items-center">Is this for beginners? <i
+              class="ph ph-plus text-accent"></i></h4>
+          <p class="mt-2 text-text-muted">Yes! We start from foundations, though basic knowledge of HTML/CSS is helpful.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl border-2 border-primary/20 hover:border-primary transition-colors cursor-pointer">
+          <h4 class="font-bold text-lg flex justify-between items-center">Will I get a recording? <i
+              class="ph ph-plus text-accent"></i></h4>
+          <p class="mt-2 text-text-muted">Yes, all sessions are recorded and shared with participants for lifetime
+            access.</p>
+        </div>
+        <div class="p-6 rounded-2xl border-2 border-primary/20 hover:border-primary transition-colors cursor-pointer">
+          <h4 class="font-bold text-lg flex justify-between items-center">Do you help with interviews? <i
+              class="ph ph-plus text-accent"></i></h4>
+          <p class="mt-2 text-text-muted">Absolutely. We cover critical interview topics like Reactive Forms, RxJS, and
+            Performance Optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-secondary py-12 px-6 text-center border-t border-white/10">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex justify-center gap-6 mb-8">
+        <a href="https://www.linkedin.com/in/irbansin/"
+          class="text-primary hover:text-white transition-colors text-2xl"><i class="ph-fill ph-linkedin-logo"></i></a>
+        <a href="https://github.com/irbansin" class="text-primary hover:text-white transition-colors text-2xl"><i
+            class="ph-fill ph-github-logo"></i></a>
+        <a href="https://topmate.io/irbansin/page/x.com/irbansin"
+          class="text-primary hover:text-white transition-colors text-2xl"><i class="ph-fill ph-twitter-logo"></i></a>
+      </div>
+      <p class="text-primary/60 font-medium mb-2">Javascript | React | Angular | NodeJS | Java</p>
+      <p class="text-white/40 text-sm">© 2025 Anirban Sinha</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+</body>
+<script src="./angular.js"></script>
+
+</html>

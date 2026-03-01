@@ -1,0 +1,402 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Anirban Sinha | HTML, CSS, JS Mastery</title>
+  <meta
+    content="Master Web Development in 20 hours with Anirban Sinha. Structured HTML, CSS, and JavaScript course for real-world development."
+    name="description">
+  <link href="./html-css-js.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+  <!-- 1. NAVIGATION -->
+  <nav
+    class="fixed top-0 w-full z-50 glass-card rounded-none border-x-0 border-t-0 px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3" data-edit-id="edit-1772343961390-2y7ul2nji">
+      <img alt="Anirban Sinha" class="w-10 h-10 rounded-full ring-2 ring-white/10"
+        data-edit-id="edit-1772343961390-k8z9ov2g8" src="https://avatars.githubusercontent.com/u/97022463?v=4">
+      <span class="font-bold text-lg tracking-tight uppercase text-primary"
+        data-edit-id="edit-1772343961390-evzy2m4sb">Anirban Sinha</span>
+    </div>
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex gap-8 items-center text-sm font-medium" data-edit-id="edit-1772343961390-f1klx2mmy">
+      <a class="hover:text-primary transition-colors" data-edit-id="edit-1772343961390-ewg3mehhx"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#hero">Home</a>
+      <a class="hover:text-primary transition-colors" data-edit-id="edit-1772343961390-o14t4hpto"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#about">The Expert</a>
+      <a class="hover:text-primary transition-colors" data-edit-id="edit-1772343961390-53fbecc86"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#curriculum">Curriculum</a><a
+        class="hover:text-primary transition-colors" href="https://websites.gabbanext.run/api/site/5mj05vdJKP#schedule"
+        data-edit-id="edit-1772344245084-59twvu5q4">Schedule</a>
+      <a class="bg-gradient-to-r from-primary to-accent text-secondary px-5 py-2 rounded-full font-bold hover:scale-105 transition-all"
+        data-edit-id="edit-1772343961390-hifsxn91y"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#services">Enroll Now</a>
+    </div>
+    <!-- Mobile Toggle -->
+    <button @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle Menu" class="md:hidden text-white p-2"
+      data-edit-id="edit-1772343961390-whzbhe17z">
+      <i class="ph-bold ph-list text-2xl"></i>
+    </button>
+    <!-- Mobile Menu Overlay -->
+    <div class="absolute top-full left-0 w-full glass-card border-none p-6 flex flex-col gap-4 md:hidden"
+      data-edit-id="edit-1772343961390-ejjzhja3i" style="display: none;">
+      <a @click="mobileMenuOpen = false" class="py-2 border-b border-white/5"
+        data-edit-id="edit-1772343961390-hprt1gbwz"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#hero">Home</a>
+      <a @click="mobileMenuOpen = false" class="py-2 border-b border-white/5"
+        data-edit-id="edit-1772343961390-k8amv5u0y" href="https://websites.gabbanext.run/api/site/5mj05vdJKP#about">The
+        Expert</a>
+      <a @click="mobileMenuOpen = false" class="py-2 border-b border-white/5"
+        data-edit-id="edit-1772343961390-8f6jwtwt4"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#curriculum">Curriculum</a><a
+        @click="mobileMenuOpen = false" class="py-2 border-b border-white/5"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#schedule"
+        data-edit-id="edit-1772344245084-ax3nbv39o">Schedule</a>
+      <a @click="mobileMenuOpen = false" class="py-3 bg-primary text-secondary text-center rounded-xl font-bold"
+        data-edit-id="edit-1772343961390-gv9fss7mm"
+        href="https://websites.gabbanext.run/api/site/5mj05vdJKP#services">Enroll Now</a>
+    </div>
+  </nav>
+  <!-- 2. HERO SECTION -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden"
+    data-edit-id="edit-1772343961390-rih1icnvp" id="hero">
+    <!-- Floating Orbs -->
+    <div class="orb bg-primary top-20 left-[-5%] animate-[orbMove_10s_infinite]"
+      data-edit-id="edit-1772343961390-twfuctg0m"></div>
+    <div class="orb bg-accent bottom-20 right-[-5%] animate-[orbMove_12s_infinite_delay-2s]"
+      data-edit-id="edit-1772343961390-7nvbosx9e"></div>
+    <div
+      class="max-w-5xl w-full glass-card rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 animate-fadeInUp"
+      data-edit-id="edit-1772343961390-d0xva0poi">
+      <div class="flex-1 text-center md:text-left" data-edit-id="edit-1772343961390-yjkq08w86">
+        <div
+          class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-6"
+          data-edit-id="edit-1772343961390-3rm4ft59u">
+          Master Frontend Development
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6" data-edit-id="edit-1772343961390-t4rxqut9j">
+          HTML, CSS, JS in <span class="text-primary italic" data-edit-id="edit-1772343961390-3nnzizs97">20 Hours</span>
+        </h1>
+        <p class="text-lg text-text-muted mb-8 max-w-xl" data-edit-id="edit-1772343961391-l02s1bq9e">
+          A structured, hands-on program designed to build strong front-end fundamentals and turn you into a confident
+          web developer.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+          data-edit-id="edit-1772343961391-f5652utsg">
+          <a class="bg-gradient-to-r from-primary to-accent text-secondary font-bold px-10 py-4 rounded-full hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300 text-center"
+            data-edit-id="edit-1772343961391-3tm0waip8"
+            href="https://websites.gabbanext.run/api/site/5mj05vdJKP#services">
+            Secure Your Spot
+          </a>
+          <a class="glass-card px-10 py-4 rounded-full font-semibold text-center hover:bg-white/10 transition-all"
+            data-edit-id="edit-1772343961391-s79drmdc4"
+            href="https://websites.gabbanext.run/api/site/5mj05vdJKP#curriculum">
+            View Curriculum
+          </a>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex justify-center" data-edit-id="edit-1772343961391-w59guksm6">
+        <div class="relative group" data-edit-id="edit-1772343961391-t6s5gmyp4">
+          <div
+            class="absolute inset-0 bg-primary/20 blur-2xl rounded-full group-hover:bg-primary/40 transition-all duration-500"
+            data-edit-id="edit-1772343961391-oqxznz7hl"></div>
+          <img alt="Anirban Sinha"
+            class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl ring-2 ring-white/10 shadow-2xl animate-float"
+            data-edit-id="edit-1772343961391-p4991eef3" src="https://avatars.githubusercontent.com/u/97022463?v=4">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 3. ABOUT SECTION -->
+  <section class="py-24 px-6 relative" data-edit-id="edit-1772343961391-rn7hkpp63" id="about">
+    <div class="max-w-4xl mx-auto" data-edit-id="edit-1772343961391-ekgmgbd72">
+      <div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden"
+        data-edit-id="edit-1772343961391-q8r5e4nbz">
+        <div class="absolute top-0 right-0 p-8 opacity-10" data-edit-id="edit-1772343961391-g4zqj0pgo">
+          <i class="ph-duotone ph-code text-9xl text-primary"></i>
+        </div>
+        <h2 class="text-3xl font-bold mb-6 flex items-center gap-3" data-edit-id="edit-1772343961391-h6opem30j">
+          <i class="ph-fill ph-user-circle text-primary"></i> Meet Your Instructor
+        </h2>
+        <h3 class="text-xl font-semibold text-primary mb-2" data-edit-id="edit-1772343961391-tkq46a3uf">Anirban Sinha
+        </h3>
+        <p class="text-text-muted mb-6 leading-relaxed" data-edit-id="edit-1772343961391-gja1ykehy">
+          Software Engineer with 10 Years of Experience specializing in Javascript, React, Angular, NodeJS, and Java.
+          Anirban brings a decade of production-level insights to help you navigate the complexities of modern web
+          development.
+        </p>
+        <div class="flex flex-wrap gap-3" data-edit-id="edit-1772343961391-slietltex">
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm"
+            data-edit-id="edit-1772343961391-zf2e4tbsf">Javascript</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm"
+            data-edit-id="edit-1772343961391-3drddxtlk">React</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm"
+            data-edit-id="edit-1772343961391-b5fny6acn">NodeJS</span>
+          <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm"
+            data-edit-id="edit-1772343961391-n7o1t3wnt">Java</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CURRICULUM HIGHLIGHTS (Phase based) -->
+  <section class="py-24 px-6 bg-secondary/30" data-edit-id="edit-1772343961391-ci9azlukq" id="curriculum">
+    <div class="max-w-6xl mx-auto" data-edit-id="edit-1772343961391-yezqisc32">
+      <div class="text-center mb-16" data-edit-id="edit-1772343961391-dsr7z6qc9">
+        <h2 class="text-4xl font-bold mb-4" data-edit-id="edit-1772343961391-9dgxrqj0r">Course Roadmap</h2>
+        <p class="text-text-muted" data-edit-id="edit-1772343961391-2p50nnsxt">From foundations to real-world web
+          development.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-edit-id="edit-1772343961391-094d9qpqf">
+        <!-- Phase 1 -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-primary hover:scale-105 transition-transform"
+          data-edit-id="edit-1772343961391-zs583tgss">
+          <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-6"
+            data-edit-id="edit-1772343961391-98mtdipz4">
+            <i class="ph-bold ph-layout text-2xl text-primary"></i>
+          </div>
+          <h4 class="text-xs font-bold text-primary uppercase tracking-widest mb-2"
+            data-edit-id="edit-1772343961391-bbvdl7s6f">Phase 01</h4>
+          <h3 class="text-xl font-bold mb-4" data-edit-id="edit-1772343961391-wa45ge36f">HTML Mastery</h3>
+          <ul class="space-y-3 text-sm text-text-muted" data-edit-id="edit-1772343961391-q39ue310g">
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-1duoeyi9t"><i
+                class="ph-bold ph-check-circle text-primary mt-1"></i> Semantic Elements</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-kdw0hv3qf"><i
+                class="ph-bold ph-check-circle text-primary mt-1"></i> Accessibility &amp; ARIA</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-la8a15zpg"><i
+                class="ph-bold ph-check-circle text-primary mt-1"></i> SEO-friendly Markup</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-aaiyussxg"><i
+                class="ph-bold ph-check-circle text-primary mt-1"></i> Forms &amp; Inputs</li>
+          </ul>
+        </div>
+        <!-- Phase 2 -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-accent hover:scale-105 transition-transform"
+          data-edit-id="edit-1772343961391-wcuzjlf3k">
+          <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6"
+            data-edit-id="edit-1772343961391-p810bim1i">
+            <i class="ph-bold ph-palette text-2xl text-accent"></i>
+          </div>
+          <h4 class="text-xs font-bold text-accent uppercase tracking-widest mb-2"
+            data-edit-id="edit-1772343961391-togp02kt8">Phase 02</h4>
+          <h3 class="text-xl font-bold mb-4" data-edit-id="edit-1772343961391-0s6jo1dsu">CSS Architecture</h3>
+          <ul class="space-y-3 text-sm text-text-muted" data-edit-id="edit-1772343961391-9im5li44r">
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-6svm5le7w"><i
+                class="ph-bold ph-check-circle text-accent mt-1"></i> Flexbox &amp; CSS Grid</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-t3xnipli1"><i
+                class="ph-bold ph-check-circle text-accent mt-1"></i> Responsive Design</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-yynhbacp9"><i
+                class="ph-bold ph-check-circle text-accent mt-1"></i> Animations &amp; Variables</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-jde0q51p4"><i
+                class="ph-bold ph-check-circle text-accent mt-1"></i> Box Model Mastery</li>
+          </ul>
+        </div>
+        <!-- Phase 3 -->
+        <div class="glass-card p-8 rounded-2xl border-l-4 border-l-white hover:scale-105 transition-transform"
+          data-edit-id="edit-1772343961391-vqo68n7ql">
+          <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6"
+            data-edit-id="edit-1772343961391-7paxbgiw0">
+            <i class="ph-bold ph-lightning text-2xl text-white"></i>
+          </div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-2"
+            data-edit-id="edit-1772343961391-pofqnggq6">Phase 03</h4>
+          <h3 class="text-xl font-bold mb-4" data-edit-id="edit-1772343961391-2t7q9cgzn">JS Interactivity</h3>
+          <ul class="space-y-3 text-sm text-text-muted" data-edit-id="edit-1772343961391-2vt6faevu">
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-8ar830fuq"><i
+                class="ph-bold ph-check-circle text-white mt-1"></i> DOM Manipulation</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-7gmwvvsgf"><i
+                class="ph-bold ph-check-circle text-white mt-1"></i> Async/Await &amp; APIs</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-miwp917cw"><i
+                class="ph-bold ph-check-circle text-white mt-1"></i> ES6+ Features</li>
+            <li class="flex items-start gap-2" data-edit-id="edit-1772343961391-czu9471lh"><i
+                class="ph-bold ph-check-circle text-white mt-1"></i> Closures &amp; Modules</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden"
+    data-edit-id="edit-1772343961391-ci9azlukq" id="curriculum">
+    <div class="max-w-6xl mx-auto" data-edit-id="edit-1772343961391-yezqisc32">
+      <div class="text-center mb-16" data-edit-id="edit-1772343961391-dsr7z6qc9">
+        <h2 class="text-4xl font-bold mb-4" data-edit-id="edit-1772343961391-9dgxrqj0r">Class Schedule</h2>
+        <p class="text-text-muted" data-edit-id="edit-1772343961391-2p50nnsxt">Stay updated with our upcoming live
+          sessions and deadlines.</p>
+
+      </div>
+      <div class="max-w-6xl mx-auto">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&showPrint=0&mode=AGENDA&src=Y2xhc3Nyb29tMTAxNDQ0Mjg2OTQ3MTQyNzI5MDM2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23b39ddb"
+          style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+    <div>
+
+
+
+
+
+    </div>
+  </section>
+  <!-- 4. SERVICES SECTION -->
+  <section class="py-24 px-6 relative" data-edit-id="edit-1772343961391-t38pdgoyv" id="services">
+    <div class="max-w-4xl mx-auto text-center mb-12" data-edit-id="edit-1772343961391-mn4ucdy8v">
+      <h2 class="text-4xl font-bold mb-4" data-edit-id="edit-1772343961391-sk5rahnjt">Ready to Start?</h2>
+      <p class="text-text-muted" data-edit-id="edit-1772343961391-zhcw0k3rv">Join the cohort and transform your career.
+      </p>
+    </div>
+    <div class="max-w-2xl mx-auto" data-edit-id="edit-1772343961391-7oano19v5">
+      <!-- STATIC SERVICE CARD 1 -->
+      <div
+        class="glass-card rounded-3xl overflow-hidden flex flex-col items-center text-center p-10 group border-2 border-primary/20"
+        data-edit-id="edit-1772343961391-2slv8810q">
+        <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6 ring-4 ring-primary/5"
+          data-edit-id="edit-1772343961391-r6kv16uop">
+          <i class="ph-bold ph-chalkboard-teacher text-5xl text-primary"></i>
+        </div>
+        <h3 class="text-3xl font-bold mb-2" data-edit-id="edit-1772343961391-2r95wiaq5">HTML. CSS, JS in 20 hours</h3>
+        <p class="text-primary font-medium mb-6" data-edit-id="edit-1772343961391-00fegl4a2">HTML, CSS &amp; JS: build
+          modern web apps</p>
+        <div class="w-full bg-white/5 rounded-2xl p-6 mb-8 text-left space-y-4"
+          data-edit-id="edit-1772343961391-m2qm5l2a8">
+          <div class="flex justify-between items-center border-b border-white/10 pb-4"
+            data-edit-id="edit-1772343961391-on41k0oti">
+            <span class="text-text-muted" data-edit-id="edit-1772343961391-7e6ay6bb1">Duration</span>
+            <span class="font-bold" data-edit-id="edit-1772343961391-453wxc10u">15 Lessons</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-white/10 pb-4"
+            data-edit-id="edit-1772343961391-vbl5mmy02">
+            <span class="text-text-muted" data-edit-id="edit-1772343961391-eagh7oe03">Level</span>
+            <span class="font-bold" data-edit-id="edit-1772343961391-p4b1ylbke">Beginner to Pro</span>
+          </div>
+          <div class="flex justify-between items-center" data-edit-id="edit-1772343961391-ti5kvwqhd">
+            <span class="text-text-muted" data-edit-id="edit-1772343961391-grnyv41bw">Investment</span>
+            <div class="text-right" data-edit-id="edit-1772343961391-eanp8wcgj">
+              <span class="block text-2xl font-bold text-primary"
+                data-edit-id="edit-1772343961391-721tetw37">₹15,000</span>
+              <span class="text-xs line-through text-text-muted"
+                data-edit-id="edit-1772343961391-i5wipxc5z">₹25,000</span>
+            </div>
+          </div>
+        </div>
+        <a class="w-full bg-gradient-to-r from-primary to-accent text-secondary font-bold py-5 rounded-2xl hover:scale-[1.02] transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-2 text-xl"
+          data-edit-id="edit-1772343961391-5vcvz5pd4" href="https://topmate.io/irbansin/1983295" target="_blank">
+          Enroll in Program <i class="ph-bold ph-arrow-right"></i>
+        </a>
+        <p class="mt-4 text-xs text-text-muted italic" data-edit-id="edit-1772343961391-w1ks64afh">Limited seats
+          available for the next session</p>
+      </div>
+    </div>
+  </section>
+  <!-- PROJECTS SECTION -->
+  <section class="py-24 px-6 bg-secondary/20" data-edit-id="edit-1772343961391-p66rzs801">
+    <div class="max-w-6xl mx-auto" data-edit-id="edit-1772343961391-ncwmalexz">
+      <h2 class="text-3xl font-bold mb-12 text-center" data-edit-id="edit-1772343961391-nf1fn4sh7">Portfolio Projects
+        You'll Build</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-edit-id="edit-1772343961391-43b076opt">
+        <div class="glass-card p-6 rounded-2xl text-center" data-edit-id="edit-1772343961391-8tnqq4ucn">
+          <i class="ph-duotone ph-browser text-4xl text-primary mb-4"></i>
+          <h4 class="font-bold mb-2" data-edit-id="edit-1772343961391-y297hqi6x">Responsive Landing Page</h4>
+          <p class="text-xs text-text-muted" data-edit-id="edit-1772343961391-7ewp903s9">Pixel-perfect layouts for all
+            devices.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-center" data-edit-id="edit-1772343961391-mm85018rt">
+          <i class="ph-duotone ph-list-checks text-4xl text-primary mb-4"></i>
+          <h4 class="font-bold mb-2" data-edit-id="edit-1772343961391-dzso7we4c">Form-based App</h4>
+          <p class="text-xs text-text-muted" data-edit-id="edit-1772343961391-xprh913z9">Complex validation and user
+            feedback.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-center" data-edit-id="edit-1772343961391-f0t757yv8">
+          <i class="ph-duotone ph-cloud-arrow-down text-4xl text-primary mb-4"></i>
+          <h4 class="font-bold mb-2" data-edit-id="edit-1772343961391-1f97zjs7e">API-driven Mini Project</h4>
+          <p class="text-xs text-text-muted" data-edit-id="edit-1772343961391-8nxcrwpfz">Fetching and rendering dynamic
+            data.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-center" data-edit-id="edit-1772343961391-j3b8oldxr">
+          <i class="ph-duotone ph-app-window text-4xl text-primary mb-4"></i>
+          <h4 class="font-bold mb-2" data-edit-id="edit-1772343961391-3kv66hqdn">Multi-page Website</h4>
+          <p class="text-xs text-text-muted" data-edit-id="edit-1772343961391-vkcqzltke">State management and navigation
+            logic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 5. FAQ SECTION -->
+  <section class="py-24 px-6" data-edit-id="edit-1772343961391-5e4ofu9ti" id="faq">
+    <div class="max-w-3xl mx-auto" data-edit-id="edit-1772343961391-t6lsfjvdq">
+      <h2 class="text-3xl font-bold mb-12 text-center" data-edit-id="edit-1772343961391-vhwti3tlb">Frequently Asked
+        Questions</h2>
+      <div class="space-y-4" data-edit-id="edit-1772343961391-ryaohn0xl">
+        <div class="glass-card rounded-2xl overflow-hidden" data-edit-id="edit-1772343961391-itx17eurx">
+          <button @click="active = active === 0 ? null : 0"
+            class="w-full p-6 text-left flex justify-between items-center font-semibold"
+            data-edit-id="edit-1772343961391-hj040haef">
+            Is this course for absolute beginners?
+            <i :class="active === 0 ? &#39;ph-minus&#39; : &#39;ph-plus&#39;" class="ph-bold ph-plus"></i>
+          </button>
+          <div class="px-6 pb-6 text-text-muted text-sm leading-relaxed" data-edit-id="edit-1772343961391-ngkbglpbp"
+            style="display: none;">
+            Yes, we start from the very basics of HTML and build up to complex JavaScript logic. It's perfect for career
+            switchers and students.
+          </div>
+        </div>
+        <div class="glass-card rounded-2xl overflow-hidden" data-edit-id="edit-1772343961391-cnzly0lph">
+          <button @click="active = active === 1 ? null : 1"
+            class="w-full p-6 text-left flex justify-between items-center font-semibold"
+            data-edit-id="edit-1772343961391-64vmpxtzl">
+            Will I get a certificate?
+            <i :class="active === 1 ? &#39;ph-minus&#39; : &#39;ph-plus&#39;" class="ph-bold ph-plus"></i>
+          </button>
+          <div class="px-6 pb-6 text-text-muted text-sm leading-relaxed" data-edit-id="edit-1772343961391-4wjet351h"
+            style="display: none;">
+            Upon successful completion of all projects and the final assessment, you will receive a certificate of
+            completion from Anirban Sinha.
+          </div>
+        </div>
+        <div class="glass-card rounded-2xl overflow-hidden" data-edit-id="edit-1772343961391-pit5i4a2x">
+          <button @click="active = active === 2 ? null : 2"
+            class="w-full p-6 text-left flex justify-between items-center font-semibold"
+            data-edit-id="edit-1772343961391-lcfc8qhb2">
+            What if I miss a session?
+            <i :class="active === 2 ? &#39;ph-minus&#39; : &#39;ph-plus&#39;" class="ph-bold ph-plus"></i>
+          </button>
+          <div class="px-6 pb-6 text-text-muted text-sm leading-relaxed" data-edit-id="edit-1772343961391-ikcvakika"
+            style="display: none;">
+            All sessions are recorded and made available to students within 24 hours. You'll also have access to a
+            private community for Q&amp;A.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 6. FOOTER -->
+  <footer class="py-12 px-6 glass-card rounded-none border-x-0 border-b-0 text-center">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+      data-edit-id="edit-1772343961391-8am3136g9">
+      <div class="text-left" data-edit-id="edit-1772343961391-qgwspwhfi">
+        <h4 class="font-bold text-primary mb-2" data-edit-id="edit-1772343961391-kpt5s6rmf">Anirban Sinha</h4>
+        <p class="text-sm text-text-muted" data-edit-id="edit-1772343961391-fdxonbae8">Software Engineer | Mentor |
+          Educator</p>
+      </div>
+      <div class="flex gap-6 text-2xl" data-edit-id="edit-1772343961391-brw2py67d">
+        <a class="hover:text-primary transition-colors" data-edit-id="edit-1772343961391-wkl6melg4"
+          href="https://www.linkedin.com/in/irbansin/" target="_blank"><i class="ph-fill ph-linkedin-logo"></i></a>
+        <a class="hover:text-primary transition-colors" data-edit-id="edit-1772343961391-1ocmpk9z4"
+          href="https://github.com/irbansin" target="_blank"><i class="ph-fill ph-github-logo"></i></a>
+        <a class="hover:text-primary transition-colors" data-edit-id="edit-1772343961391-098xaubjy"
+          href="https://medium.com/@irbansin" target="_blank"><i class="ph-fill ph-medium-logo"></i></a>
+      </div>
+      <div class="text-sm text-text-muted" data-edit-id="edit-1772343961391-ga8k7vos9">
+        © 2024 Anirban Sinha
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

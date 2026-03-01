@@ -4,22 +4,22 @@ import styles from "./Home.module.scss";
 const tutorials = [
   {
     title: "HTML / CSS / JS",
-    link: "https://www.topmate.io/irbansin/page/5mj05vdJKP",
+    link: "/service-pages/html-css-js/html-css-js.html",
     img: "https://www.freepnglogos.com/uploads/javascript-png/fix-html-css-javascript-for-website-logo-6.png",
   },
   {
     title: "NodeJS",
-    link: "https://www.topmate.io/irbansin/page/x4odgj3oII",
+    link: "/service-pages/nodejs/nodejs.html",
     img: "https://colorlib.com/wp/wp-content/uploads/sites/2/nodejs-frameworks.png",
   },
   {
     title: "ReactJS",
-    link: "https://www.topmate.io/irbansin/page/t64YSDz5rj",
+    link: "/service-pages/react/react.html",
     img: "https://uploads.teachablecdn.com/attachments/SWtZL7dtR3SYRScauf7w_+1920x1357.jpg",
   },
   {
     title: "Angular",
-    link: "https://www.topmate.io/irbansin/page/MctVtvBb34",
+    link: "/service-pages/angular/angular.html",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKUxiY3CHfyGGgwhLRkBdKoEmb4lxIOgarRQ&s",
   },
 ];
@@ -94,6 +94,17 @@ function Home() {
           ))}
         </div>
       </section>
+            <section className={`${styles.liveTutorials} ${styles.reveal}`}>
+        <h2 className={styles.sectionTitle}>Schedule</h2>
+        <div className={styles.schedule}>
+          <iframe 
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&mode=WEEK&src=YW5pLmV4cG8xMEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTA1NDU4NjgxNjM3MjQ1ODQ0NjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAxNDQ0Mjg2OTQ3MTQyNzI5MDM2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA4MDAyOTgxMTc0NTczNTM0MTI0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE1NTcyMzMxNjg4NDYxODM5MDkwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=N2Y4ZjJmYmZiYzA1N2Y5M2QyMGQ4ZTcwYTViZGNlMWEwZWY0NTE1ZjQzNzliNDEwMWJiMTQ5MDk1ZDU2MDgxOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YTA5ZmFmYzM2N2JmNjY3ZGZkMmQ2ZWI0NDgyMTRkMDBjMDY5N2VkNmI2YWU2ZDAxZTAyODY0MDIyNzk5ODU2MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cDFhdTFxMWJodDI1aWxkYm5qdDdidXQwbW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23711a76&color=%23795548&color=%23b39ddb&color=%237cb342&color=%23e67c73&color=%23f09300&color=%23c0ca33&color=%23b39ddb" 
+            width="800" 
+            height="600" 
+            frameborder="0" 
+            scrolling="no"/>
+        </div>
+      </section>
       <section className={`${styles.socialLinks} ${styles.reveal}`}>
         <div className={styles.socialInner}>
           <a href="https://www.linkedin.com/in/irbansin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -140,6 +151,8 @@ function Home() {
           ))}
         </div>
       </section>
+
+
 
 
     </div>

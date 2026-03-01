@@ -1,8 +1,8 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Resume from "./pages/Resume/Resume";
 
 function App() {

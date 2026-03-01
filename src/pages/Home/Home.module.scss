@@ -32,6 +32,16 @@
   max-width: 1000px;
 }
 
+.schedule {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1000px;
+}
+
 .card {
   background: #fff;
   border-radius: 8px;
