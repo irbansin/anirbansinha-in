@@ -24,6 +24,29 @@ const tutorials = [
   },
 ];
 
+const connects = [
+  {
+    title: "Technical Guidance Session",
+    link: "https://topmate.io/irbansin/1982515?utm_source=public_profile&utm_campaign=irbansin",
+  },
+  {
+    title: "Quick TXT",
+    link: "https://topmate.io/irbansin/1982637/pay?utm_source=public_profile&utm_campaign=irbansin",
+  },
+  {
+    title: "Chai break : Career & Strategy",
+    link: "https://topmate.io/irbansin/1982486?utm_source=public_profile&utm_campaign=irbansin",
+  },
+  {
+    title: "Resume & Profile Audit",
+    link: "https://topmate.io/irbansin/1982508?utm_source=public_profile&utm_campaign=irbansin",
+  },
+  {
+    title: "Mock Interview Lite",
+    link: "https://topmate.io/irbansin/1982517?utm_source=public_profile&utm_campaign=irbansin",
+  },
+];
+
 function Home() {
   const containerRef = useRef(null);
 
@@ -52,7 +75,25 @@ function Home() {
           Developer, teacher, writer. Learn with me through fun tutorials.
         </p>
       </section>
-
+      <section className={`${styles.connectSection} ${styles.reveal}`}>
+        <h2 className={styles.sectionTitle}>Connect with me</h2>
+        <div className={styles.connectGrid}>
+          {connects.map((c, idx) => (
+            <a
+              key={idx}
+              href={c.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.connectCard}
+            >
+              <div className={styles.connectInner}>
+                <div className={styles.connectTitle}>{c.title}</div>
+                <div className={styles.connectCTA}>Book on Topmate →</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
       <section className={`${styles.socialLinks} ${styles.reveal}`}>
         <div className={styles.socialInner}>
           <a href="https://www.linkedin.com/in/irbansin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -69,6 +110,12 @@ function Home() {
           </a>
           <a href="https://medium.com/@irbansin" target="_blank" rel="noopener noreferrer" aria-label="Medium">
             <img src="https://cdn-icons-png.flaticon.com/128/5968/5968906.png" alt="Medium" />
+          </a>
+          <a href="https://dev.to/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Dev">
+            <img src="https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="Dev.to" />
+          </a>
+          <a href="mailto:reach@anirbansinha.in" aria-label="Email">
+            <img src="https://cdn-icons-png.flaticon.com/128/561/561127.png" alt="Email" />
           </a>
           <a href="https://topmate.io/dashboard/profile" target="_blank" rel="noopener noreferrer" aria-label="Topmate">
             <img src="https://images.yourstory.com/cs/images/companies/topmateiologo-1707412608028.jpg" alt="Topmate" />
@@ -93,6 +140,8 @@ function Home() {
           ))}
         </div>
       </section>
+
+
     </div>
   );
 }
