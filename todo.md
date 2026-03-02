@@ -1,6 +1,7 @@
 # ToDo List
 
-- Add portfolio page and load netlify apps via iframe
+- Create a display card component
+- Add netlify apps via iframes
 - Add Java tutorial
 - Add ML tutorial
 - Add DL tutorial

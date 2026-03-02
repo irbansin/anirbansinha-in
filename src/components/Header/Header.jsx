@@ -8,7 +8,7 @@ function Header() {
   const menuItems = [
     { label: "Home", to: "/home" },
     { label: "Resume", to: "/resume" },
-    { label: "Portfolio", to: "/portfolio" },
+    // { label: "Portfolio", to: "/portfolio" },
     // Projects removed
     {
       label: "Blog",
