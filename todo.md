@@ -1,5 +1,6 @@
 # ToDo List
 
+- Add icons
 - Create a display card component
 - Add netlify apps via iframes
 - Add Java tutorial
