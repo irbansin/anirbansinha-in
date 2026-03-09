@@ -32,33 +32,46 @@ function Resume() {
 
       <section className={styles.contact}>
         <p>
-          Bengaluru, Karnataka, India
-          <br />
-          Mobile: 94824&nbsp;10312 / 87594&nbsp;71790 <br />
-          <a href="mailto:reach@anirbansinha.in">reach@anirbansinha.in</a> |
-          <a
-            href="https://github.com/irbansin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github.com/irbansin
-          </a>{" "}
-          |
-          <a
-            href="https://linkedin.com/in/irbansin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn.com/in/irbansin
-          </a>{" "}
-          | Website:{" "}
-          <a
-            href="https://anirbansinha.in"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            anirbansinha.in
-          </a>
+          <div className={styles.contact}>
+            {userDetails.city}, {userDetails.state}, {userDetails.country}
+          </div>
+
+          <div className={styles.contact}>
+            Mobile:{" "}
+            {Array.isArray(userDetails?.phones) && userDetails.phones.length > 0
+              ? userDetails.phones.map((num, i) => (
+                  <span key={i}>
+                    <a href={`tel:${String(num).replace(/\s+/g, "")}`}>{num}</a>
+                    {i < userDetails.phones.length - 1 ? ", " : ""}
+                  </span>
+                ))
+              : "-"}
+          </div>
+          <div className={styles.contact}>
+            {Array.isArray(userDetails?.links) && userDetails.links.length > 0
+              ? userDetails.links.map((linkObject, i) => (
+                  <div className={styles.link} key={i}>
+                    <img
+                      src={linkObject.icon}
+                      alt={`${linkObject.linkType} icon`}
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                        marginRight: "4px",
+                        marginLeft: i > 0 ? "12px" : "0px",
+                      }}
+                    />
+                    <a
+                      href={linkObject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {linkObject.linkText}
+                    </a>
+                  </div>
+                ))
+              : ""}
+          </div>
         </p>
       </section>
 
