@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import styles from "./Home.module.scss";
+import Banner from "../../components/Banner/Banner";
 
 const tutorials = [
   {
@@ -70,10 +71,10 @@ function Home() {
   return (
     <div className={styles.container} ref={containerRef}>
       <section className={`${styles.banner} ${styles.reveal}`}>
-        <h1 className={styles.title}>Anirban Sinha</h1>
-        <p className={styles.subtitle}>
-          Developer, teacher, writer. Learn with me through fun tutorials.
-        </p>
+        <Banner
+          title="Anirban Sinha"
+          subtitle="Learn with me through fun tutorials."
+        />
       </section>
       <section className={`${styles.connectSection} ${styles.reveal}`}>
         <h2 className={styles.sectionTitle}>Connect with me</h2>
@@ -101,8 +102,6 @@ function Home() {
             src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&mode=WEEK&title=Anirban's%20Calendar&src=YW5pLmV4cG8xMEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTA1NDU4NjgxNjM3MjQ1ODQ0NjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA1NjgyOTE4NjY5MDc2NjE1NjM4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZmFtaWx5MDE4MzI3NTY1NDIzNzE5NDQwMTZAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Y2xhc3Nyb29tMTAxNDQ0Mjg2OTQ3MTQyNzI5MDM2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=M3Q4NjgxM2Rib2lyMGhpb3FzbjY0Nm51dTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Y2xhc3Nyb29tMTA4MDAyOTgxMTc0NTczNTM0MTI0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE1NTcyMzMxNjg4NDYxODM5MDkwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=N2Y4ZjJmYmZiYzA1N2Y5M2QyMGQ4ZTcwYTViZGNlMWEwZWY0NTE1ZjQzNzliNDEwMWJiMTQ5MDk1ZDU2MDgxOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cDFhdTFxMWJodDI1aWxkYm5qdDdidXQwbW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dGNxMm9oZzNmY3VoZDFwdnJlZGw3NW0xOHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23711a76&color=%23795548&color=%23616161&color=%23f4511e&color=%23b39ddb&color=%237cb342&color=%237cb342&color=%23e67c73&color=%23f09300&color=%23b39ddb&color=%238e24aa"
             width="800"
             height="600"
-            frameborder="0"
-            scrolling="no"
           ></iframe>
         </div>
       </section>

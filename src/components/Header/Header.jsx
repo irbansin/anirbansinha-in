@@ -8,8 +8,7 @@ function Header() {
   const menuItems = [
     { label: "Home", to: "/home" },
     { label: "Resume", to: "/resume" },
-    // { label: "Portfolio", to: "/portfolio" },
-    // Projects removed
+    { label: "Portfolio", to: "/portfolio" },
     {
       label: "Blog",
       to: "https://anirbansinha.notion.site/a0bcc45fa11c47fb99ab7d24dadecd49?v=5519d501ffd74921b9903e65dad4691b",
