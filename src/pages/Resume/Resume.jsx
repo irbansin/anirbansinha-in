@@ -31,7 +31,7 @@ function Resume() {
       </section>
 
       <section className={styles.contact}>
-        <p>
+        <div>
           <div className={styles.contact}>
             {userDetails.city}, {userDetails.state}, {userDetails.country}
           </div>
@@ -72,7 +72,7 @@ function Resume() {
                 ))
               : ""}
           </div>
-        </p>
+        </div>
       </section>
 
       <section className={styles.summary}>
@@ -244,8 +244,8 @@ function Resume() {
         <ul>
           {userDetails.education && userDetails.education.length > 0 ? (
             userDetails.education.map((edu, i) => (
-              <div>
-                <li key={i}>
+              <div key={i}>
+                <li>
                   {edu.institution} - {edu.degree}
                 </li>
                 <div className={styles.studyPeriod}>
