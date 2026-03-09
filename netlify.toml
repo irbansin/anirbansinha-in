@@ -1,11 +1,13 @@
+# Proxy API requests to  backend (keep force=true here to ensure /api always goes to backend)
 [[redirects]]
   from = "/api/*"
   to = "https://anirbansinha-in-be.onrender.com/:splat"
   status = 200
-  force = false
+  force = true
 
+# SPA Fallback: Serve index.html ONLY if the file is not found (force = false)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
+  force = false
