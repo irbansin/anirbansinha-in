@@ -77,13 +77,7 @@ function Resume() {
 
       <section className={styles.summary}>
         <h2>Summary</h2>
-        <p>
-          Experienced Software Engineer specializing in JavaScript, Angular,
-          React, Node.js, Java. Passionate about building scalable,
-          high-performance applications with a strong focus on frontend and
-          backend development. Proven ability to lead teams, mentor developers,
-          and deliver impactful solutions.
-        </p>
+        <p>{userDetails.summary}</p>
       </section>
 
       <section className={styles.skills}>
@@ -248,23 +242,34 @@ function Resume() {
       <section className={`${styles.education} ${styles.reveal}`}>
         <h2>Education</h2>
         <ul>
-          <li>
-            Indian Institute of Technology, Jodhpur – MTech, Data Engineering
-            and Artificial Intelligence (2024–2026)
-          </li>
-          <li>
-            Asansol Engineering College – BTech, Computer Engineering
-            (2013–2017)
-          </li>
+          {userDetails.education && userDetails.education.length > 0 ? (
+            userDetails.education.map((edu, i) => (
+              <div>
+                <li key={i}>
+                  {edu.institution} - {edu.degree}
+                </li>
+                <div className={styles.studyPeriod}>
+                  {" "}
+                  {edu.startYear} - {edu.endYear || "Present"}
+                </div>
+              </div>
+            ))
+          ) : (
+            <li>No education listed.</li>
+          )}
         </ul>
       </section>
 
       <section className={`${styles.certifications} ${styles.reveal}`}>
         <h2>Certifications & Achievements</h2>
         <ul>
-          <li>TCS "On The Spot" Award</li>
-          <li>Global Student Entrepreneurship Finalist</li>
-          <li>Tata First Dot Top 25 Startups</li>
+          {userDetails.achievements && userDetails.achievements.length > 0 ? (
+            userDetails.achievements.map((achievement, i) => (
+              <li key={i}>{achievement}</li>
+            ))
+          ) : (
+            <li>No achievements listed.</li>
+          )}
         </ul>
       </section>
     </div>
