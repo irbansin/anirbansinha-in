@@ -1,0 +1,106 @@
+.inkLoader {
+  --ink: #0b0b0b;
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
+/* base drop */
+.drop {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(0, 0, 0, 0.95) 0%,
+    var(--ink) 40%
+  );
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  filter: blur(0.6px);
+  animation-name: splat;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+/* positions, sizes, durations and delays for natural splatter */
+.drop:nth-of-type(1) {
+  left: 50%;
+  top: 50%;
+  width: 12%;
+  height: 12%;
+  animation-duration: 1400ms;
+  animation-delay: 0ms;
+}
+.drop:nth-of-type(2) {
+  left: 30%;
+  top: 40%;
+  width: 18%;
+  height: 18%;
+  animation-duration: 1600ms;
+  animation-delay: 120ms;
+}
+.drop:nth-of-type(3) {
+  left: 70%;
+  top: 42%;
+  width: 10%;
+  height: 10%;
+  animation-duration: 1500ms;
+  animation-delay: 240ms;
+}
+.drop:nth-of-type(4) {
+  left: 40%;
+  top: 70%;
+  width: 16%;
+  height: 16%;
+  animation-duration: 1700ms;
+  animation-delay: 360ms;
+}
+.drop:nth-of-type(5) {
+  left: 62%;
+  top: 72%;
+  width: 14%;
+  height: 14%;
+  animation-duration: 1550ms;
+  animation-delay: 480ms;
+}
+.drop:nth-of-type(6) {
+  left: 52%;
+  top: 28%;
+  width: 20%;
+  height: 20%;
+  animation-duration: 1800ms;
+  animation-delay: 600ms;
+}
+
+/* splat keyframes: grow, spread, fade */
+@keyframes splat {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    filter: blur(1px);
+  }
+  12% {
+    opacity: 1;
+    filter: blur(0.4px);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.05) translateY(-4%);
+    opacity: 0.95;
+  }
+  65% {
+    transform: translate(-50%, -50%) scale(0.9) translateY(6%);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.95) translateY(10%);
+    opacity: 0;
+  }
+}
+
+/* optional smaller size on tight layouts */
+@media (max-width: 420px) {
+  .inkLoader {
+    transform: scale(0.8);
+  }
+}

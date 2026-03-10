@@ -3,9 +3,10 @@ import styles from "./Portfolio.module.scss";
 import Banner from "../../components/Banner/Banner";
 import { apiUrl } from "../../../config";
 import Card from "../../components/Card/Card";
+import InkLoader from "../../components/InkLoader/InkLoader";
 
 function Portfolio() {
-  const [projects, setProjects] = useState({});
+  const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState({});
   const [error, setError] = useState({});
 
@@ -45,13 +46,13 @@ function Portfolio() {
         />
       </section>
       <section>
-        <div className={styles.portfolioGrid}>
-          {Array.isArray(projects) && projects.length > 0
-            ? projects.map((item, i) => (
+        <div>
+          {!projects.length ? (
+            <InkLoader />
+          ) : (
+            <div className={styles.portfolioGrid}>
+              {projects.map((item, i) => (
                 <div className={styles.portfolioItem} key={i}>
-                  {/* <a href={item.deploy_url} target="_blank">
-                  <img src={item.screenshot_url}></img>
-                </a> */}
                   <Card
                     title={item.name}
                     link={item.deploy_url}
@@ -60,8 +61,9 @@ function Portfolio() {
                     height={"180px"}
                   />
                 </div>
-              ))
-            : "No Projects Found"}
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>
