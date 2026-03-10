@@ -1,9 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import Banner from "../../components/Banner/Banner";
 
 function Portfolio() {
   const containerRef = useRef(null);
+  const [projects, setProjects] = useState({});
+  const [loading, setLoading] = useState({});
+  const [error, setError] = useState({});
 
   useEffect(() => {
     const opts = { threshold: 0.1 };
@@ -21,6 +24,33 @@ function Portfolio() {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch("/api/v1/projects", {
+          method: "GET",
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        setProjects(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  useEffect(() => {
+    console.log(projects);
+  }, [projects]);
 
   return (
     <div className={styles.container} ref={containerRef}>
