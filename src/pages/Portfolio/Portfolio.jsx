@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import Banner from "../../components/Banner/Banner";
+import { apiUrl } from "../../../config";
 
 function Portfolio() {
   const containerRef = useRef(null);
@@ -28,7 +29,7 @@ function Portfolio() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("/api/v1/projects", {
+        const response = await fetch(apiUrl("/api/v1/projects"), {
           method: "GET",
         });
 
