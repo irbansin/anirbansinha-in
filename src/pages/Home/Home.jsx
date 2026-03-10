@@ -51,13 +51,13 @@ const connects = [
 function Home() {
   return (
     <div className={styles.container}>
-      <section className={`${styles.banner} ${styles.reveal}`}>
+      <section className={`${styles.banner}`}>
         <Banner
           title="Anirban Sinha"
           subtitle="Learn with me through fun tutorials."
         />
       </section>
-      <section className={`${styles.connectSection} ${styles.reveal}`}>
+      <section className={`${styles.connectSection}`}>
         <h2 className={styles.sectionTitle}>Connect with me</h2>
         <div className={styles.connectGrid}>
           {connects.map((c, idx) => (
@@ -76,7 +76,7 @@ function Home() {
           ))}
         </div>
       </section>
-      <section className={`${styles.liveTutorials} ${styles.reveal}`}>
+      <section className={`${styles.liveTutorials}`}>
         <h2 className={styles.sectionTitle}>Schedule</h2>
         <div className={styles.schedule}>
           <iframe
@@ -86,7 +86,7 @@ function Home() {
           ></iframe>
         </div>
       </section>
-      <section className={`${styles.socialLinks} ${styles.reveal}`}>
+      <section className={`${styles.socialLinks}`}>
         <div className={styles.socialInner}>
           <a
             href="https://www.linkedin.com/in/irbansin/"
@@ -174,7 +174,7 @@ function Home() {
         </div>
       </section>
 
-      <section className={`${styles.liveTutorials} ${styles.reveal}`}>
+      <section className={`${styles.liveTutorials}`}>
         <h2 className={styles.sectionTitle}>Live Tutorials</h2>
         <div className={styles.tutorials}>
           {tutorials.map((tut, i) => (
