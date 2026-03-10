@@ -3,6 +3,7 @@ import { apiUrl } from "../../../config";
 import styles from "./Resume.module.scss";
 import Banner from "../../components/Banner/Banner";
 import { useEffect, useState } from "react";
+import SkeletonLoader from "../../components/SkeletonLoader/SkeletonLoader";
 
 function Resume() {
   const [userDetails, setUserDetails] = useState({});
@@ -33,51 +34,63 @@ function Resume() {
       <section className={styles.contact}>
         <div>
           <div className={styles.contact}>
-            {userDetails.city}, {userDetails.state}, {userDetails.country}
+            {userDetails.city || <SkeletonLoader width="7rem" />},{" "}
+            {userDetails.state || <SkeletonLoader width="7rem" />},{" "}
+            {userDetails.country || <SkeletonLoader width="7rem" />}
           </div>
 
           <div className={styles.contact}>
             Mobile:{" "}
-            {Array.isArray(userDetails?.phones) && userDetails.phones.length > 0
-              ? userDetails.phones.map((num, i) => (
-                  <span key={i}>
-                    <a href={`tel:${String(num).replace(/\s+/g, "")}`}>{num}</a>
-                    {i < userDetails.phones.length - 1 ? ", " : ""}
-                  </span>
-                ))
-              : "-"}
+            {Array.isArray(userDetails?.phones) &&
+            userDetails.phones.length > 0 ? (
+              userDetails.phones.map((num, i) => (
+                <span key={i}>
+                  <a href={`tel:${String(num).replace(/\s+/g, "")}`}>{num}</a>
+                  {i < userDetails.phones.length - 1 ? ", " : ""}
+                </span>
+              ))
+            ) : (
+              <SkeletonLoader />
+            )}
           </div>
           <div className={styles.contact}>
-            {Array.isArray(userDetails?.links) && userDetails.links.length > 0
-              ? userDetails.links.map((linkObject, i) => (
-                  <div className={styles.link} key={i}>
-                    <img
-                      src={linkObject.icon}
-                      alt={`${linkObject.linkType} icon`}
-                      style={{
-                        width: "16px",
-                        height: "16px",
-                        marginRight: "4px",
-                        marginLeft: i > 0 ? "12px" : "0px",
-                      }}
-                    />
-                    <a
-                      href={linkObject.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {linkObject.linkText}
-                    </a>
-                  </div>
-                ))
-              : ""}
+            {Array.isArray(userDetails?.links) &&
+            userDetails.links.length > 0 ? (
+              userDetails.links.map((linkObject, i) => (
+                <div className={styles.link} key={i}>
+                  <img
+                    src={linkObject.icon}
+                    alt={`${linkObject.linkType} icon`}
+                    style={{
+                      width: "16px",
+                      height: "16px",
+                      marginRight: "4px",
+                      marginLeft: i > 0 ? "12px" : "0px",
+                    }}
+                  />
+                  <a
+                    href={linkObject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {linkObject.linkText}
+                  </a>
+                </div>
+              ))
+            ) : (
+              <SkeletonLoader width="70rem" />
+            )}
           </div>
         </div>
       </section>
 
       <section className={styles.summary}>
         <h2>Summary</h2>
-        <p>{userDetails.summary}</p>
+        <p>
+          {userDetails.summary || (
+            <SkeletonLoader height={"10rem"} width={"100%"} />
+          )}
+        </p>
       </section>
 
       <section className={styles.skills}>

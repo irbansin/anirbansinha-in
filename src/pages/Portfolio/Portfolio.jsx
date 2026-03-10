@@ -40,10 +40,7 @@ function Portfolio() {
   return (
     <div className={styles.container}>
       <section className={`${styles.banner} `}>
-        <Banner
-          title="Portfolio"
-          subtitle="A collection of my projects, achievements and experiences."
-        />
+        <Banner title="Portfolio" subtitle="A collection of Projects" />
       </section>
       <section>
         <div>

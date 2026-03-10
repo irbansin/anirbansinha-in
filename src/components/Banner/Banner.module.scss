@@ -1,5 +1,7 @@
 .banner {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 4rem 1rem;
   background: linear-gradient(135deg, #4a90e2 0%, #9013fe 100%);
   color: white;
@@ -7,10 +9,16 @@
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.25rem;
 }

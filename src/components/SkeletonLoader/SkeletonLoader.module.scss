@@ -1,0 +1,21 @@
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.line {
+  background: linear-gradient(90deg, #eeeeee 25%, #dddddd 37%, #eeeeee 63%);
+  background-size: 200% 100%;
+  opacity: 0.3;
+  animation: shimmer 1.2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
