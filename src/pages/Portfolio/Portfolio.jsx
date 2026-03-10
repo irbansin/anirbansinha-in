@@ -2,29 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Portfolio.module.scss";
 import Banner from "../../components/Banner/Banner";
 import { apiUrl } from "../../../config";
+import Card from "../../components/Card/Card";
 
 function Portfolio() {
-  const containerRef = useRef(null);
   const [projects, setProjects] = useState({});
   const [loading, setLoading] = useState({});
   const [error, setError] = useState({});
-
-  useEffect(() => {
-    const opts = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.visible);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, opts);
-
-    const elems = containerRef.current.querySelectorAll(`.${styles.reveal}`);
-    elems.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -54,12 +37,32 @@ function Portfolio() {
   }, [projects]);
 
   return (
-    <div className={styles.container} ref={containerRef}>
-      <section className={`${styles.banner} ${styles.reveal}`}>
+    <div className={styles.container}>
+      <section className={`${styles.banner} `}>
         <Banner
           title="Portfolio"
           subtitle="A collection of my projects, achievements and experiences."
         />
+      </section>
+      <section>
+        <div className={styles.portfolioGrid}>
+          {Array.isArray(projects) && projects.length > 0
+            ? projects.map((item, i) => (
+                <div className={styles.portfolioItem} key={i}>
+                  {/* <a href={item.deploy_url} target="_blank">
+                  <img src={item.screenshot_url}></img>
+                </a> */}
+                  <Card
+                    title={item.name}
+                    link={item.deploy_url}
+                    image={item.screenshot_url}
+                    width={"100%"}
+                    height={"180px"}
+                  />
+                </div>
+              ))
+            : "No Projects Found"}
+        </div>
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import styles from "./Home.module.scss";
 import Banner from "../../components/Banner/Banner";
 
@@ -49,27 +49,8 @@ const connects = [
 ];
 
 function Home() {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const opts = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.visible);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, opts);
-
-    const elems = containerRef.current.querySelectorAll(`.${styles.reveal}`);
-    elems.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div className={styles.container}>
       <section className={`${styles.banner} ${styles.reveal}`}>
         <Banner
           title="Anirban Sinha"
