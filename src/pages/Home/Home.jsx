@@ -27,6 +27,10 @@ const tutorials = [
 
 const connects = [
   {
+    title: "Free Students' Guidance",
+    link: "https://topmate.io/irbansin/1984813?utm_source=public_profile&utm_campaign=irbansin",
+  },
+  {
     title: "Technical Guidance Session",
     link: "https://topmate.io/irbansin/1982515?utm_source=public_profile&utm_campaign=irbansin",
   },
@@ -34,6 +38,7 @@ const connects = [
     title: "Quick TXT",
     link: "https://topmate.io/irbansin/1982637/pay?utm_source=public_profile&utm_campaign=irbansin",
   },
+
   {
     title: "Chai break : Career & Strategy",
     link: "https://topmate.io/irbansin/1982486?utm_source=public_profile&utm_campaign=irbansin",
@@ -54,11 +59,41 @@ function Home() {
       <section className={`${styles.banner}`}>
         <Banner
           title="Anirban Sinha"
-          subtitle="Learn with me through fun tutorials."
+          subtitle="Engineer | Mentor | Content Creator"
         />
       </section>
+      <section className={`${styles.aboutSection}`}>
+        <h2 className={styles.sectionTitle}>About Me</h2>
+        <p className={styles.aboutText}>
+          I'm Anirban, a passionate software engineer with over 9 years of
+          experience in the tech industry. I specialize in web development and
+          have a strong background in JavaScript, TypeScript, Node.js, Angular,
+          and React. I love sharing my knowledge through mentoring and content
+          creation, helping others grow in their tech careers. When I'm not
+          coding, you can find me exploring new technologies or enjoying a good
+          book.
+        </p>
+      </section>
+      <section className={`${styles.hireMeSection}`}>
+        <h2 className={styles.sectionTitle}>Hire Me</h2>
+        <p className={styles.hireMeText}>
+          I'm currently open to new opportunities and collaborations. If you're
+          looking for a dedicated and experienced software engineer to join your
+          team or work on a project, feel free to reach out. I'm excited to
+          bring my skills and passion for technology to new challenges and make
+          a positive impact.
+        </p>
+        <a
+          href="https://calendar.app.google/z2ygBfvxoaCyfhwNA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.hireMeLink}
+        >
+          Lets talk business →
+        </a>
+      </section>
       <section className={`${styles.connectSection}`}>
-        <h2 className={styles.sectionTitle}>Connect with me</h2>
+        <h2 className={styles.sectionTitle}>I love sharing knowledge</h2>
         <div className={styles.connectGrid}>
           {connects.map((c, idx) => (
             <a
