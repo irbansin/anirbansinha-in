@@ -174,6 +174,9 @@ function Home() {
           <a href="https://dev.to/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Dev.to">
             <img src="https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="Dev.to" />
           </a>
+          <a href="https://anirbansinha.notion.site/a0bcc45fa11c47fb99ab7d24dadecd49?v=5519d501ffd74921b9903e65dad4691b" target="_blank" rel="noopener noreferrer" aria-label="Notion Blog">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion Blog" />
+          </a>
           <a href="https://topmate.io/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Topmate">
             <img src="https://images.yourstory.com/cs/images/companies/topmateiologo-1707412608028.jpg" alt="Topmate" />
           </a>
