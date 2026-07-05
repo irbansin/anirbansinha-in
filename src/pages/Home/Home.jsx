@@ -108,10 +108,10 @@ function Home() {
       )}&body=${encodeURIComponent(
         `Hi Anirban,\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`
       )}`;
-      
+
       // Open default mail provider
       window.location.href = mailtoUrl;
-      
+
       // Reset form fields
       setFormData({ name: "", email: "", subject: "", message: "" });
     }, 1200);
@@ -125,11 +125,11 @@ function Home() {
           <div className={styles.heroTextContent}>
             <Banner
               title="Anirban Sinha"
-              subtitle="Senior Software Engineer | Mentor | Content Creator"
+              subtitle="Senior Software Engineer | Mentor | Art Lover"
             />
             <p className={styles.heroIntro}>
-              Specializing in full-stack architectures using Node.js, React, Angular, and cloud setups. 
-              Currently pursuing my MTech in Data Engineering & AI at IIT Jodhpur. 
+              Specializing in full-stack architectures using Node.js, React, Angular, and cloud setups.
+              Currently pursuing my MTech in Data Engineering & AI at IIT Jodhpur.
               I design and build resilient web systems.
             </p>
             <div className={styles.heroCTAs}>
@@ -211,13 +211,13 @@ function Home() {
           <div className={styles.storyBlock}>
             <h2 className={styles.sectionTitle}>About Me</h2>
             <p className={styles.storyText}>
-              I'm Anirban, a passionate software engineer with extensive experience in the tech industry. 
-              My journey spans leadership roles at startups and global digital consulting firms alike. 
-              I specialize in frontend and backend systems, leading teams to deliver modular architectures 
+              I'm Anirban, a passionate software engineer with extensive experience in the tech industry.
+              My journey spans leadership roles at startups and global digital consulting firms alike.
+              I specialize in frontend and backend systems, leading teams to deliver modular architectures
               and robust APIs.
             </p>
             <p className={styles.storyText}>
-              Beyond engineering, I enjoy researching AI models, writing tech articles on Medium/Dev.to, 
+              Beyond engineering, I enjoy researching AI models, writing tech articles on Medium/Dev.to,
               and mentoring students. I regularly consult on profile audits, career roadmaps, and mock interviews.
             </p>
           </div>
@@ -304,7 +304,7 @@ function Home() {
       <section id="contact" className={styles.contactFormSection}>
         <h2 className={styles.sectionTitle}>Let's Connect</h2>
         <p className={styles.sectionSubtitle}>Send a message to discuss opportunities or collaboration requests.</p>
-        
+
         <div className={styles.formContainer}>
           {formStatus === "success" ? (
             <div className={styles.formSuccess}>
@@ -345,7 +345,7 @@ function Home() {
                   />
                 </div>
               </div>
-              
+
               <div className={styles.formGroup}>
                 <label htmlFor="subject">Subject</label>
                 <input
