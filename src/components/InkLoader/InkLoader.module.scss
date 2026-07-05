@@ -1,5 +1,5 @@
 .inkLoader {
-  --ink: #0b0b0b;
+  --ink: var(--color-accent-primary);
   position: relative;
   display: inline-block;
   overflow: visible;
@@ -11,12 +11,13 @@
   border-radius: 50%;
   background: radial-gradient(
     circle at 30% 30%,
-    rgba(0, 0, 0, 0.95) 0%,
-    var(--ink) 40%
+    #ffffff 0%,
+    var(--ink) 40%,
+    transparent 100%
   );
   transform: translate(-50%, -50%) scale(0);
   opacity: 0;
-  filter: blur(0.6px);
+  filter: drop-shadow(0 0 4px var(--ink));
   animation-name: splat;
   animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
   animation-iteration-count: infinite;
@@ -39,6 +40,7 @@
   height: 18%;
   animation-duration: 1600ms;
   animation-delay: 120ms;
+  --ink: var(--color-accent-secondary);
 }
 .drop:nth-of-type(3) {
   left: 70%;
@@ -55,6 +57,7 @@
   height: 16%;
   animation-duration: 1700ms;
   animation-delay: 360ms;
+  --ink: var(--color-accent-secondary);
 }
 .drop:nth-of-type(5) {
   left: 62%;
@@ -71,6 +74,7 @@
   height: 20%;
   animation-duration: 1800ms;
   animation-delay: 600ms;
+  --ink: var(--color-accent-tertiary);
 }
 
 /* splat keyframes: grow, spread, fade */

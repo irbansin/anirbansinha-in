@@ -11,23 +11,25 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/portfolio" element={<Portfolio />} />
 
-          {/* navigate to external blog page */}
-          <Route
-            path="/blog"
-            element={
-              <Navigate
-                to="https://anirbansinha.notion.site/a0bcc45fa11c47fb99ab7d24dadecd49?v=5519d501ffd74921b9903e65dad4691b"
-                replace
-              />
-            }
-          />
-        </Routes>
+            {/* navigate to external blog page */}
+            <Route
+              path="/blog"
+              element={
+                <Navigate
+                  to="https://anirbansinha.notion.site/a0bcc45fa11c47fb99ab7d24dadecd49?v=5519d501ffd74921b9903e65dad4691b"
+                  replace
+                />
+              }
+            />
+          </Routes>
+        </main>
         <Footer />
       </BrowserRouter>
     </>

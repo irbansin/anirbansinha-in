@@ -3,13 +3,20 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  height: 70px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-glass);
   z-index: 1000;
-  backdrop-filter: blur(4px);
-  padding: 0.5rem 1rem;
-}
-
-/* ensure content is not hidden under header */
-body {
-  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: background var(--transition-normal), border var(--transition-normal);
+  
+  &:hover {
+    background: rgba(15, 22, 38, 0.85);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
 }
