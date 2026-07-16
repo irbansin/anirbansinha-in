@@ -1,83 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Home.module.scss";
 import Banner from "../../components/Banner/Banner";
+import { apiUrl } from "../../../config"
 
-const tutorials = [
-  {
-    title: "HTML / CSS / JS",
-    link: "https://github.com/irbansin",
-    img: "https://www.freepnglogos.com/uploads/javascript-png/fix-html-css-javascript-for-website-logo-6.png",
-  },
-  {
-    title: "NodeJS",
-    link: "https://github.com/irbansin",
-    img: "https://colorlib.com/wp/wp-content/uploads/sites/2/nodejs-frameworks.png",
-  },
-  {
-    title: "ReactJS",
-    link: "https://github.com/irbansin",
-    img: "https://uploads.teachablecdn.com/attachments/SWtZL7dtR3SYRScauf7w_+1920x1357.jpg",
-  },
-  {
-    title: "Angular",
-    link: "https://github.com/irbansin",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKUxiY3CHfyGGgwhLRkBdKoEmb4lxIOgarRQ&s",
-  },
-];
 
-const connects = [
-  {
-    title: "Free Students' Guidance",
-    link: "https://topmate.io/irbansin/1984813?utm_source=public_profile&utm_campaign=irbansin",
-    desc: "15 min consultation for students and fresh grads.",
-  },
-  {
-    title: "Technical Guidance Session",
-    link: "https://topmate.io/irbansin/1982515?utm_source=public_profile&utm_campaign=irbansin",
-    desc: "1-on-1 strategy call about software engineering.",
-  },
-  {
-    title: "Quick TXT",
-    link: "https://topmate.io/irbansin/1982637/pay?utm_source=public_profile&utm_campaign=irbansin",
-    desc: "Got a quick question? Ping me directly.",
-  },
-  {
-    title: "Chai break : Career & Strategy",
-    link: "https://topmate.io/irbansin/1982486?utm_source=public_profile&utm_campaign=irbansin",
-    desc: "Friendly casual chat on career roadmap.",
-  },
-  {
-    title: "Resume & Profile Audit",
-    link: "https://topmate.io/irbansin/1982508?utm_source=public_profile&utm_campaign=irbansin",
-    desc: "Complete review of LinkedIn and Resume.",
-  },
-  {
-    title: "Mock Interview Lite",
-    link: "https://topmate.io/irbansin/1982517?utm_source=public_profile&utm_campaign=irbansin",
-    desc: "30-min interview practice with real-time feedback.",
-  },
-];
 
-const coreSkills = [
-  {
-    category: "Languages",
-    items: ["JavaScript", "TypeScript", "Java", "Python", "SQL"],
-  },
-  {
-    category: "Frameworks",
-    items: ["React", "Angular", "Next.js", "Node.js", "Express", "Spring Boot"],
-  },
-  {
-    category: "Databases & ORMs",
-    items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Prisma", "Hibernate"],
-  },
-  {
-    category: "Cloud & Devops",
-    items: ["AWS (Lambda, S3, CloudFront)", "GCP", "Docker", "Git", "Nx Monorepo"],
-  },
-];
 
 function Home() {
+  const [tutorials, setTutorials] = useState([]);
+
+  const [services, setServices] = useState([]);
+
+  const [coreSkills, setCoreSkills] = useState([]);
+  const [socials, setSocials] = useState([]);
+  const [aboutParagraphs, setAboutParagraphs] = useState([]);
+  const [heroData, setHeroData] = useState(null);
+  const [stats, setStats] = useState([]);
+  const [calendarUrl, setCalendarUrl] = useState("");
+  const [loading, setLoading] = useState(true); // Bring back loading state!
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -85,7 +26,125 @@ function Home() {
     message: "",
   });
   const [formStatus, setFormStatus] = useState("idle"); // idle, sending, success, error
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/services"));
+        const responseMessage = await res.json();
+        setServices(responseMessage.message.servicesInfo);
+      } catch (err) {
+        console.error("Failed to fetch services:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/tutorials"));
+        const responseMessage = await res.json();
+        setTutorials(responseMessage.message.tutorialsInfo);
+      } catch (err) {
+        console.error("Failed to fetch tutorials:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/skills"));
+        const responseMessage = await res.json();
+        setCoreSkills(responseMessage.message.skillsInfo);
+      } catch (err) {
+        console.error("Failed to fetch skills:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/socials"));
+        const responseMessage = await res.json();
+        setSocials(responseMessage.message.socialsInfo);
+      } catch (err) {
+        console.error("Failed to fetch socials:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/about"));
+        const responseMessage = await res.json();
+        setAboutParagraphs(responseMessage.message.paragraphs);
+      } catch (err) {
+        console.error("Failed to fetch about text:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/hero"));
+        const responseMessage = await res.json();
+        setHeroData(responseMessage.message.heroInfo);
+      } catch (err) {
+        console.error("Failed to fetch hero details:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/stats"));
+        const responseMessage = await res.json();
+        setStats(responseMessage.message.statsInfo);
+      } catch (err) {
+        console.error("Failed to fetch stats:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl("/api/v1/calendar"));
+        const responseMessage = await res.json();
+        setCalendarUrl(responseMessage.message.calendarUrl);
+      } catch (err) {
+        console.error("Failed to fetch calendar URL:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -124,14 +183,14 @@ function Home() {
         <div className={styles.heroGrid}>
           <div className={styles.heroTextContent}>
             <Banner
-              title="Anirban Sinha"
-              subtitle="Senior Software Engineer | Mentor | Art Lover"
+              title={heroData?.title}
+              subtitle={heroData?.subtitle}
             />
-            <p className={styles.heroIntro}>
-              Specializing in full-stack architectures using Node.js, React, Angular, and cloud setups.
-              Currently pursuing my MTech in Data Engineering & AI at IIT Jodhpur.
-              I design and build resilient web systems.
-            </p>
+            {heroData?.intro && (
+              <p className={styles.heroIntro}>
+                {heroData.intro}
+              </p>
+            )}
             <div className={styles.heroCTAs}>
               <a href="#contact" className={styles.ctaPrimary}>
                 Get in Touch
@@ -141,85 +200,63 @@ function Home() {
               </a>
             </div>
           </div>
-          <div className={styles.heroImageContainer}>
-            <div className={styles.neonAvatarFrame}>
-              <img
-                src="https://avatars.githubusercontent.com/u/97022463?v=4"
-                alt="Anirban Sinha"
-                className={styles.avatarImage}
-              />
+          {heroData?.avatarUrl && (
+            <div className={styles.heroImageContainer}>
+              <div className={styles.neonAvatarFrame}>
+                <img
+                  src={heroData.avatarUrl}
+                  alt={heroData.title || "Avatar"}
+                  className={styles.avatarImage}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
       {/* Social Links Bar */}
-      <section className={styles.socialLinks}>
-        <div className={styles.socialInner}>
-          <a href="https://www.linkedin.com/in/irbansin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="LinkedIn" />
-          </a>
-          <a href="https://x.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="X">
-            <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" alt="X" />
-          </a>
-          <a href="https://github.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <img src="https://cdn-icons-png.flaticon.com/128/733/733553.png" alt="GitHub" />
-          </a>
-          <a href="https://instagram.com/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" alt="Instagram" />
-          </a>
-          <a href="https://medium.com/@irbansin" target="_blank" rel="noopener noreferrer" aria-label="Medium">
-            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968906.png" alt="Medium" />
-          </a>
-          <a href="https://dev.to/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Dev.to">
-            <img src="https://media2.dev.to/dynamic/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="Dev.to" />
-          </a>
-          <a href="https://anirbansinha.notion.site/a0bcc45fa11c47fb99ab7d24dadecd49?v=5519d501ffd74921b9903e65dad4691b" target="_blank" rel="noopener noreferrer" aria-label="Notion Blog">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion Blog" />
-          </a>
-          <a href="https://topmate.io/irbansin" target="_blank" rel="noopener noreferrer" aria-label="Topmate">
-            <img src="https://images.yourstory.com/cs/images/companies/topmateiologo-1707412608028.jpg" alt="Topmate" />
-          </a>
-        </div>
-      </section>
+      {socials && socials.length > 0 && (
+        <section className={styles.socialLinks}>
+          <div className={styles.socialInner}>
+            {socials.map((soc, idx) => (
+              <a
+                href={soc.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={soc.platform}
+                key={idx}
+              >
+                <img src={soc.icon} alt={soc.platform} />
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Core Competencies (Stats Grid) */}
-      <section className={styles.statsSection}>
-        <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>9+</div>
-            <div className={styles.statLabel}>Years Industry Experience</div>
+      {stats && stats.length > 0 && (
+        <section className={styles.statsSection}>
+          <div className={styles.statsGrid}>
+            {stats.map((st, idx) => (
+              <div className={styles.statCard} key={idx}>
+                <div className={styles.statNumber}>{st.value}</div>
+                <div className={styles.statLabel}>{st.label}</div>
+              </div>
+            ))}
           </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>IIT</div>
-            <div className={styles.statLabel}>MTech Data Eng & AI</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>500+</div>
-            <div className={styles.statLabel}>Students Guided</div>
-          </div>
-          <div className={styles.statCard}>
-            <div className={styles.statNumber}>15+</div>
-            <div className={styles.statLabel}>Open Deployments</div>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* About Story & Skills Grid */}
       <section className={styles.aboutStorySection}>
         <div className={styles.storyGrid}>
           <div className={styles.storyBlock}>
             <h2 className={styles.sectionTitle}>About Me</h2>
-            <p className={styles.storyText}>
-              I'm Anirban, a passionate software engineer with extensive experience in the tech industry.
-              My journey spans leadership roles at startups and global digital consulting firms alike.
-              I specialize in frontend and backend systems, leading teams to deliver modular architectures
-              and robust APIs.
-            </p>
-            <p className={styles.storyText}>
-              Beyond engineering, I enjoy researching AI models, writing tech articles on Medium/Dev.to,
-              and mentoring students. I regularly consult on profile audits, career roadmaps, and mock interviews.
-            </p>
+            {aboutParagraphs.map((para, idx) => (
+              <p className={styles.storyText} key={idx}>
+                {para}
+              </p>
+            ))}
           </div>
           <div className={styles.storySkillsBlock}>
             <h2 className={styles.sectionTitle}>Key Strengths</h2>
@@ -246,7 +283,7 @@ function Home() {
         <h2 className={styles.sectionTitle}>Knowledge Sharing & Mentorship</h2>
         <p className={styles.sectionSubtitle}>Book a 1-on-1 session directly on my calendar via Topmate.</p>
         <div className={styles.connectGrid}>
-          {connects.map((c, idx) => (
+          {services.map((c, idx) => (
             <a
               key={idx}
               href={c.link}
@@ -265,18 +302,20 @@ function Home() {
       </section>
 
       {/* Calendar Schedule Section */}
-      <section className={styles.liveTutorials}>
-        <h2 className={styles.sectionTitle}>Availability Calendar</h2>
-        <p className={styles.sectionSubtitle}>View my weekly availability schedule for consultation calls.</p>
-        <div className={styles.scheduleWrapper}>
-          <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&showPrint=0&mode=WEEK&title=Anirban's%20Calendar&src=YW5pLmV4cG8xMEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTA1NDU4NjgxNjM3MjQ1ODQ0NjIyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTA1NjgyOTE4NjY5MDc2NjE1NjM4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZmFtaWx5MDE4MzI3NTY1NDIzNzE5NDQwMTZAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=M3Q4NjgxM2Rib2lyMGhpb3FzbjY0Nm51dTRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Y2xhc3Nyb29tMTA4MDAyOTgxMTc0NTczNTM0MTI0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE1NTcyMzMxNjg4NDYxODM5MDkwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTAxNDQ0Mjg2OTQ3MTQyNzI5MDM2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=N2Y4ZjJmYmZiYzA1N2Y5M2QyMGQ4ZTcwYTViZGNlMWEwZWY0NTE1ZjQzNzliNDEwMWJiMTQ5MDk1ZDU2MDgxOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cDFhdTFxMWJodDI1aWxkYm5qdDdidXQwbW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=dGNxMm9oZzNmY3VoZDFwdnJlZGw3NW0xOHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%230088ff&color=%23795548&color=%2383d754&color=%23f4511e&color=%237cb342&color=%23ac7f5e&color=%23e67c73&color=%23b39ddb&color=%23f09300&color=%23919191&color=%238e24aa"
-            className={styles.calendarIframe}
-            title="Anirban Sinha Google Calendar"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </section>
+      {calendarUrl && (
+        <section className={styles.liveTutorials}>
+          <h2 className={styles.sectionTitle}>Availability Calendar</h2>
+          <p className={styles.sectionSubtitle}>View my weekly availability schedule for consultation calls.</p>
+          <div className={styles.scheduleWrapper}>
+            <iframe
+              src={calendarUrl}
+              className={styles.calendarIframe}
+              title="Anirban Sinha Google Calendar"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </section>
+      )}
 
       {/* Tutorials list */}
       <section className={styles.liveTutorials}>
