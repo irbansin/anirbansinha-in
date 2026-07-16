@@ -8,6 +8,7 @@ function Header() {
   const menuItems = [
     { label: "Home", to: "/home" },
     { label: "Resume", to: "/resume" },
+    // { label: "Build Resume", to: "/build-resume" },
     { label: "Portfolio", to: "/portfolio" },
   ];
 

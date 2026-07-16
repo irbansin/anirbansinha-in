@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Resume from "./pages/Resume/Resume";
 import Portfolio from "./pages/Portfolio/Portfolio";
+import BuildResume from "./pages/BuildResume/BuildResume";
 import FloatingDownload from "./components/FloatingDownload/FloatingDownload";
 import ResumePrintTemplate from "./components/ResumePrintTemplate/ResumePrintTemplate";
 import { useEffect, useState } from "react";
@@ -12,6 +13,7 @@ import { apiUrl } from "../config";
 
 function App() {
   const [userDetails, setUserDetails] = useState(null);
+  const [overrideUserDetails, setOverrideUserDetails] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,13 +39,17 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/resume" element={<Resume userDetails={userDetails} />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route
+                path="/build-resume"
+                element={<BuildResume setOverrideUserDetails={setOverrideUserDetails} />}
+              />
             </Routes>
           </main>
           <Footer />
-          <FloatingDownload userDetails={userDetails} />
+          <FloatingDownload userDetails={overrideUserDetails || userDetails} />
         </div>
         {/* Render print template sibling to screen-content for print isolation */}
-        <ResumePrintTemplate userDetails={userDetails} />
+        <ResumePrintTemplate userDetails={overrideUserDetails || userDetails} />
       </BrowserRouter>
     </>
   );
