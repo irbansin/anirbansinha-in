@@ -1,9 +1,9 @@
 import SkeletonLoader from "../SkeletonLoader/SkeletonLoader";
 import styles from "./Banner.module.scss";
 
-function Banner({ title, subtitle }) {
+function Banner({ title, subtitle, centered }) {
   return (
-    <div className={styles.Banner}>
+    <div className={`${styles.Banner} ${centered ? styles.centered : ""}`}>
       {" "}
       <div className={styles.title}>
         {title ? <span>{title}</span> : <SkeletonLoader height={"50px"} />}{" "}

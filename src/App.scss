@@ -39,3 +39,20 @@ main {
   opacity: 1;
   transition: opacity 300ms ease;
 }
+
+/* Global Print Media Overrides */
+@media print {
+  .screen-content {
+    display: none !important;
+  }
+
+  html, body, #root, main {
+    background: #ffffff !important;
+    background-image: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    min-height: auto !important;
+  }
+}
+

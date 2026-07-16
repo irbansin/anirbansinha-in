@@ -1,0 +1,84 @@
+.floatingButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  
+  background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(157, 78, 221, 0.4);
+  transition: all var(--transition-normal);
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+  }
+  
+  .text {
+    display: inline;
+    letter-spacing: 0.5px;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(157, 78, 221, 0.6), 0 0 15px rgba(0, 225, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+    
+    .icon {
+      transform: translateY(2px);
+    }
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+  }
+}
+
+// Media Query for mobile screen sizes: convert to a circular FAB
+@media (max-width: 768px) {
+  .floatingButton {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(157, 78, 221, 0.5);
+    
+    .text {
+      display: none; // Hide text on mobile for clean, icon-only FAB
+    }
+    
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+    
+    &:hover {
+      transform: scale(1.1); // Simple scale feedback
+      box-shadow: 0 8px 25px rgba(157, 78, 221, 0.7);
+      
+      .icon {
+        transform: none; // Avoid displacement on mobile tap
+      }
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

@@ -4,24 +4,29 @@ import Banner from "../../components/Banner/Banner";
 import { useEffect, useState } from "react";
 import SkeletonLoader from "../../components/SkeletonLoader/SkeletonLoader";
 
-function Resume() {
-  const [userDetails, setUserDetails] = useState(null);
-  const [loading, setLoading] = useState(true);
+function Resume({ userDetails: propUserDetails }) {
+  const [userDetails, setUserDetails] = useState(propUserDetails || null);
+  const [loading, setLoading] = useState(!propUserDetails);
 
   useEffect(() => {
+    if (propUserDetails) {
+      setUserDetails(propUserDetails);
+      setLoading(false);
+      return;
+    }
     const fetchData = async () => {
       try {
         const res = await fetch(apiUrl("/api/v1/resume-details"));
         const responseMessage = await res.json();
         setUserDetails(responseMessage.message.userInfo);
       } catch (err) {
-        console.error("Failed to fetch resume details:", err);
+        console.error("Failed to fetch resume details locally:", err);
       } finally {
         setLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [propUserDetails]);
 
   if (loading) {
     return (
@@ -38,7 +43,7 @@ function Resume() {
   return (
     <div className={styles.container}>
       <section className={styles.bannerSection}>
-        <Banner title={info.name || "Anirban Sinha"} subtitle={info.jobTitle || "Software Engineer"} />
+        <Banner title={info.name || "Anirban Sinha"} subtitle={info.jobTitle || "Software Engineer"} centered />
       </section>
 
       {/* Contact information Grid */}
@@ -85,7 +90,6 @@ function Resume() {
                   aria-hidden="true"
                   className={styles.linkIcon}
                   onError={(e) => {
-                    // Fallback to simple circle if image fails to load
                     e.target.style.display = 'none';
                   }}
                 />
@@ -110,7 +114,6 @@ function Resume() {
           <h2 className={styles.sectionHeader}>Technical Skills</h2>
           <div className={styles.skillsGrid}>
             {Object.entries(info.technicalSkills).map(([category, list], idx) => {
-              // Convert camelCase to Title Case with Space
               const categoryTitle = category
                 .replace(/([A-Z])/g, " $1")
                 .replace(/^./, (str) => str.toUpperCase());

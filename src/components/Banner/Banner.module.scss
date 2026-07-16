@@ -6,6 +6,15 @@
   padding: 1.5rem 3rem;
   width: 100%;
   text-align: left;
+
+  &.centered {
+    align-items: center;
+    text-align: center;
+
+    .title, .subtitle {
+      text-align: center;
+    }
+  }
 }
 
 .title {
