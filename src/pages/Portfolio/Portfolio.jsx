@@ -3,7 +3,7 @@ import styles from "./Portfolio.module.scss";
 import Banner from "../../components/Banner/Banner";
 import { apiUrl } from "../../../config";
 import Card from "../../components/Card/Card";
-import InkLoader from "../../components/InkLoader/InkLoader";
+import ProcessLoader from "../../components/ProcessLoader/ProcessLoader";
 
 // Helper to format raw netlify project names
 function formatProjectName(name) {
@@ -36,6 +36,27 @@ function Portfolio() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [loadingStep, setLoadingStep] = useState(0);
+
+  const loadingMessages = [
+    "Connecting to Netlify...",
+    "Fetching active deployments...",
+    "Validating deployment status...",
+    "Building portfolio grid...",
+  ];
+
+  useEffect(() => {
+    if (!loading) return;
+    const interval = setInterval(() => {
+      setLoadingStep((prev) => {
+        if (prev < loadingMessages.length - 1) {
+          return prev + 1;
+        }
+        return prev;
+      });
+    }, 400);
+    return () => clearInterval(interval);
+  }, [loading]);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -69,10 +90,11 @@ function Portfolio() {
       
       <section className={styles.portfolioSection}>
         {loading ? (
-          <div className={styles.loaderContainer}>
-            <InkLoader size={100} />
-            <p className={styles.loaderText}>Retrieving deployments from Netlify...</p>
-          </div>
+          <ProcessLoader
+            title="Retrieving Projects"
+            message={loadingMessages[Math.min(loadingStep, loadingMessages.length - 1)]}
+            progress={Math.max(15, (loadingStep / loadingMessages.length) * 100)}
+          />
         ) : error ? (
           <div className={styles.errorContainer}>
             <p className={styles.errorText}>⚠️ Failed to load dynamic portfolio: {error}</p>

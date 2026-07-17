@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./BuildResume.module.scss";
 import Banner from "../../components/Banner/Banner";
+import ProcessLoader from "../../components/ProcessLoader/ProcessLoader";
 import { apiUrl } from "../../../config";
 
 function BuildResume({ setOverrideUserDetails }) {
@@ -230,24 +231,11 @@ function BuildResume({ setOverrideUserDetails }) {
       )}
 
       {loading && (
-        <section className={styles.loaderSection}>
-          <div className={styles.loaderCard}>
-            <div className={styles.scannerWrapper}>
-              <div className={styles.scannerLine}></div>
-              <div className={styles.loadingSpinner}></div>
-            </div>
-            <h2 className={styles.loaderTitle}>Parsing LinkedIn Markup</h2>
-            <div className={styles.progressTrack}>
-              <div
-                className={styles.progressBar}
-                style={{ width: `${(loadingStep / loadingMessages.length) * 100}%` }}
-              ></div>
-            </div>
-            <p className={styles.loaderStepMessage}>
-              {loadingMessages[Math.min(loadingStep, loadingMessages.length - 1)]}
-            </p>
-          </div>
-        </section>
+        <ProcessLoader
+          title="Parsing LinkedIn Markup"
+          message={loadingMessages[Math.min(loadingStep, loadingMessages.length - 1)]}
+          progress={(loadingStep / loadingMessages.length) * 100}
+        />
       )}
 
       {generatedResume && (

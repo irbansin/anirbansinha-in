@@ -61,23 +61,6 @@
   }
 }
 
-.loaderContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 0;
-  gap: 1.5rem;
-}
-
-.loaderText {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  font-family: var(--font-heading);
-  animation: pulseText 1.5s ease-in-out infinite;
-}
-
 .errorContainer {
   display: flex;
   flex-direction: column;
