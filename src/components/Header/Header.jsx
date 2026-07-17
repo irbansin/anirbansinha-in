@@ -10,6 +10,9 @@ function Header() {
     { label: "Resume", to: "/resume" },
     // { label: "Build Resume", to: "/build-resume" },
     { label: "Portfolio", to: "/portfolio" },
+    // { label: "Terms of Service", to: "/terms-of-service" },
+    // { label: "Support", to: "/support" },
+    // { label: "Privacy Policy", to: "/privacy-policy" },
   ];
 
   const handleClick = (item) => {

@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Resume from "./pages/Resume/Resume";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import BuildResume from "./pages/BuildResume/BuildResume";
+import TermsOfService from "./pages/TermsOfService/TermsOfService";
+import Support from "./pages/Support/Support";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import FloatingDownload from "./components/FloatingDownload/FloatingDownload";
 import ResumePrintTemplate from "./components/ResumePrintTemplate/ResumePrintTemplate";
 import { useEffect, useState } from "react";
@@ -39,6 +42,9 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/resume" element={<Resume userDetails={userDetails} />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route
                 path="/build-resume"
                 element={<BuildResume setOverrideUserDetails={setOverrideUserDetails} />}
