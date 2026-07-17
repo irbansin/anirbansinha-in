@@ -71,7 +71,7 @@ function Portfolio() {
 
         const data = await response.json();
         // Sort projects so recent/main deployments show first
-        setProjects(data);
+        setProjects(data.filter((item) => item.disabled !== true));
       } catch (err) {
         setError(err.message);
       } finally {
